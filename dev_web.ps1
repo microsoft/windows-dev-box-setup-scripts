@@ -7,6 +7,7 @@ Disable-UAC
 #--- Windows Features ---
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
 
+
 #--- File Explorer Settings ---
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneShowAllFolders -Value 1
@@ -21,7 +22,28 @@ choco install 7zip.install
 
 #--- Windows Subsystems/Features ---
 choco install Microsoft-Hyper-V-All -source windowsFeatures
-choco install Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+# Your system will prompt you to restart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+#--- Ubuntu ---
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Add-AppxPackage -Path ~/Ubuntu.appx
+Ubuntu.exe
+
+<#
+#--- SLES ---
+# Install SLES Store app
+Invoke-WebRequest -Uri https://aka.ms/wsl-sles-12 -OutFile ~/SLES.appx -UseBasicParsing
+Add-AppxPackage -Path ~/SLES.appx
+# Launch SLES
+SLS.exe
+
+# --- openSUSE ---
+Invoke-WebRequest -Uri https://aka.ms/wsl-opsensuse-42 -OutFile ~/openSUSE.appx -UseBasicParsing
+Add-AppxPackage -Path ~/openSUSE.appx
+# Launch openSUSE
+openSUSE.exe
+#>
 
 #--- Browsers ---
 choco install googlechrome -y
