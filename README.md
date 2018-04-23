@@ -15,7 +15,7 @@ The "dev_" scripts are named according to developer scenario.
 
 ## How to run the scripts
 Links will be provided here in the readme<br/>
-Click the link and you'll see a prompt for boxstarter click once.  CLick yes and the system setup will begin!
+Click the link and you'll see a prompt for boxstarter click once.  Click yes and the system setup will begin!
 
 An example to try is click this should work for the dev_web script:<br/>
 http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/yodurrdev/dev_web.ps1?token=AK0OHm6nRJ0LtaB1wIFSqTAaqf4WiuuZks5a2uyewA%3D%3D
