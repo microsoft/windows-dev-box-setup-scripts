@@ -36,13 +36,13 @@ Ubuntu.exe
 Invoke-WebRequest -Uri https://aka.ms/wsl-sles-12 -OutFile ~/SLES.appx -UseBasicParsing
 Add-AppxPackage -Path ~/SLES.appx
 # Launch SLES
-SLS.exe
+sles-12.exe
 
 # --- openSUSE ---
-Invoke-WebRequest -Uri https://aka.ms/wsl-opsensuse-42 -OutFile ~/openSUSE.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-opensuse-42 -OutFile ~/openSUSE.appx -UseBasicParsing
 Add-AppxPackage -Path ~/openSUSE.appx
 # Launch openSUSE
-openSUSE.exe
+opensuse-42.exe
 #>
 
 #--- Browsers ---
