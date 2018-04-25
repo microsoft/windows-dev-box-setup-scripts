@@ -36,8 +36,7 @@ choco install nodejs-lts -y # Node.js LTS, Recommended for most users
 # choco install nodejs -y # Node.js Current, Latest features
 choco install sysinternals -y
 choco install docker-for-windows
-choco install python
-choco install python2 # should we remove earlier python?
+choco install python2 # Node.js requires Python 2 to build native modules
 choco install pip
 choco install easy.install
 
