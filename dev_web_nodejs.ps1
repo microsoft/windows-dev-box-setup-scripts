@@ -34,6 +34,8 @@ choco install ubuntu.font -y
 #--- Tools ---
 choco install nodejs-lts -y # Node.js LTS, Recommended for most users
 # choco install nodejs -y # Node.js Current, Latest features
+choco install visualstudio2017buildtools -y
+choco install visualstudio2017-workload-vctools -y
 choco install sysinternals -y
 choco install docker-for-windows
 choco install python2 # Node.js requires Python 2 to build native modules
