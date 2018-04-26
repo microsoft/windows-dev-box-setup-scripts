@@ -1,4 +1,4 @@
-# Description: Boxstarter Script  
+# Description: Boxstarter Script
 # Author: Microsoft
 # Common dev settings for web development
 
@@ -14,33 +14,34 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
 
 #--- Tools ---
-choco install visualstudiocode -y
-choco install git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"' -y
-choco install Git-Credential-Manager-for-Windows -y
-choco install 7zip.install -y
+choco install -y visualstudiocode
+choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
+choco install -y Git-Credential-Manager-for-Windows
+choco install -y 7zip.install
 
 #--- Windows Subsystems/Features ---
-choco install Microsoft-Hyper-V-All -source windowsFeatures
-choco install Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
 #--- Browsers ---
-choco install Firefox -y
-choco install Googlechrome -y
+choco install -y Firefox
+choco install -y Googlechrome
 
 #--- Fonts ---
-choco install inconsolata -y
-choco install ubuntu.font -y
+choco install -y inconsolata
+choco install -y ubuntu.font
 
 #--- Tools ---
-choco install nodejs -y
-choco install sysinternals -y
-choco install docker-for-windows
-choco install python
-choco install python2 # should we remove earlier python?
-choco install pip
-choco install easy.install
+choco install -y nodejs-lts # Node.js LTS, Recommended for most users
+# choco install -y nodejs # Node.js Current, Latest features
+choco install -y visualstudio2017buildtools
+choco install -y visualstudio2017-workload-vctools
+choco install -y sysinternals
+choco install -y docker-for-windows
+choco install -y python2 # Node.js requires Python 2 to build native modules
+choco install -y pip
+choco install -y easy.install
 
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
-
