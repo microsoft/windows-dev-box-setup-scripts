@@ -13,13 +13,13 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
 
 #--- Windows Subsystems/Features ---
-choco install Microsoft-Hyper-V-All -source windowsFeatures
-choco install Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
 #--- Tools ---
-choco install visualstudio2017community -y  # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
-choco install sysinternals -y
-choco install docker-for-windows
+choco install -y visualstudio2017community  # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
+choco install -y sysinternals
+choco install -y docker-for-windows
 
 Enable-UAC
 Enable-MicrosoftUpdate
