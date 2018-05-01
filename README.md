@@ -17,8 +17,8 @@ The "dev_" scripts are named according to developer scenario.
 Links will be provided here in the readme<br/>
 Click the link and you'll see a prompt for boxstarter click once.  Click yes and the system setup will begin!
 
-An example to try is click this should work for the dev_web script:<br/>
-http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/yodurrdev/dev_web.ps1?token=AK0OHm6nRJ0LtaB1wIFSqTAaqf4WiuuZks5a2uyewA%3D%3D
+An example to try is click this should work for the NodeJS script:<br/>
+http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D
 
 ## Working with Enterprise Chocolatey?
 No problem, you can still use this scripts.  Before you do you'll need to modify the package source to match your enterprise package store.  Here are instructions for doing so.
