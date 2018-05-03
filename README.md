@@ -1,6 +1,6 @@
 
 # About this project
-The goal of this porject is to provide a central place to share ideas for streamlining dev box setup and give you starting point ideas. It's likely you will want to take scripts here and modify them to fit your particular needs.  When you make those changes if you think others would benefit please consider submitting a PR. Before you contribute please see the [Contribution Guidelines](CONTRIBUTING.md).
+The goal of this project is to provide a central place to share ideas for streamlining dev box setup and provide sample scripts for common dev scenarios. It's likely you will want to take the scripts here and modify them to fit your particular needs. When you make those changes if you think others would benefit please consider submitting a PR. Before you contribute please see the [Contribution Guidelines](CONTRIBUTING.md).
 
 These scripts leverage two popular open source projects.
 - Boxstarter [boxstarter.org](http://boxstarter.org)
@@ -13,10 +13,10 @@ To run a script click a link in the table below. This will download Boxstarter, 
  
 |Link  |Description  |
 |---------|---------|
-|     | Desktop App Development (Visual Studio, Windows SDK) |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1?token=AK0OHpRu7iHVJgnn7DsbBumVp2C4ljleks5a9LuJwA%3D%3D'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
-|     | Web (VS Code, Multiple Browsers)        |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D'>Web_NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1?token=AK0OHhoec2cUUr7i0KVnUReiLhzNPGxXks5a9LugwA%3D%3D'>Web</a> | Web (VS Code, Multiple Browsers)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
 |    | Machine Learning        |
 |     | Containers (Kubernetes, etc...)        |
 
