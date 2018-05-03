@@ -1,42 +1,38 @@
 
 # About this project
-This project contains sample scripts and tips for setting up a Windows development machine.
+The goal of this porject is to provide a central place to share ideas for streamlining dev box setup and give you starting point ideas. It's likely you will want to take scripts here and modify them to fit your particular needs.  When you make those changes if you think others would benefit please consider submitting a PR. Before you contribute please see the [Contribution Guidelines](CONTRIBUTING.md).
 
-These scripts leverage two popular projects
+These scripts leverage two popular open source projects.
 - Boxstarter [boxstarter.org](http://boxstarter.org)
 - Chocolatey [chocolatey.org](http://chocolatey.org)
 
-This project exists because we noticed scripts and tips showing up in different open source projects and thought it would be useful to have a central place for collaborating on setup scripts.
-
-The goal here is to provide a central place to share ideas for streamlining dev box setup and give you starting point ideas. It's likely you will want to take scripts here and modify them to fit your particular needs.  When you make those changes if you think others would benefit please consider submitting a PR here.  Before you contribute please see the contribution guidelines.
-
-## Script naming convention
-The "dev_" scripts are named according to developer scenario.
-
 ## How to run the scripts
-Links will be provided here in the readme<br/>
-Click the link and you'll see a prompt for boxstarter click once.  Click yes and the system setup will begin!
+Before you begin, please read the [Read Before You Run](#read-this-before-you-run) section.  
 
-An example to try is click this should work for the NodeJS script:<br/>
-http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D
+To run a script click a link in the table below. This will download Boxstarter, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the script to begin. You can then leave the job unattended and come back when it's finished.
+ 
+|Link  |Description  |
+|---------|---------|
+|     | Desktop App Development (Visual Studio, Windows SDK) |
+|     | Xamarin (Visual Studio, Xamarin, Android SDK) |
+|     | Web (VS Code, Multiple Browsers)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D'>Web_NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
+|    | Machine Learning        |
+|     | Containers (Kubernetes, etc...)        |
 
-## Working with Enterprise Chocolatey?
-No problem, you can still use this scripts.  Before you do you'll need to modify the package source to match your enterprise package store.  Here are instructions for doing so.
+
+## Read this before you run
+[BEN]
+
+## Working with Chocolatey for Organizations?
+No problem, you can still use these scripts. You'll need to modify the script to reference your internal package store.  Here are instructions for doing so: 
+
+[ADD INSTRUCTIONS]
 
 ## Setting up a VM
 Windows 10 VM setup instructions
-1. Insert Quick create steps here
-2. Include steps once signed in to your VM
+1. Use Quick Create to set up a VM 
+2. Once signed in to your VM, browse to this project and click a script link in the table of scripts
 
 # Contributing
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Do you want to contribute? We would love your help. Here are our <a href="CONTRIBUTING.md">contribution guidelines</a>.
