@@ -4,17 +4,14 @@ The goal of this project is to provide a central place to share ideas for stream
 
 These scripts leverage two popular open source projects.
 - Boxstarter [boxstarter.org](http://boxstarter.org)
-
-
- 
 - Chocolatey [chocolatey.org](http://chocolatey.org)
 
 ## How to run the scripts
 Before you begin, please read the [Legal](#Legal) section.  
 
-To run a script click a link in the table below. This will download Boxstarter, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the script to begin. You can then leave the job unattended and come back when it's finished.
+To run a setup script, click a link in the table below from your target machine. This will download Boxstarter, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the script to begin. You can then leave the job unattended and come back when it's finished.
  
-|Link  |Description  |
+|Click link to run  |Description  |
 |---------|---------|
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1?token=AK0OHpRu7iHVJgnn7DsbBumVp2C4ljleks5a9LuJwA%3D%3D'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1?token=AK0OHhoec2cUUr7i0KVnUReiLhzNPGxXks5a9LugwA%3D%3D'>Web</a> | Web (VS Code, Multiple Browsers)        |
@@ -31,8 +28,8 @@ No problem, you can still use these scripts. You'll need to modify the script to
 
 ## Setting up a VM
 Windows 10 VM setup instructions
-1. Use Quick Create to set up a VM 
-2. Once signed in to your VM, browse to this project and click a script link in the table of scripts
+1. Use Hyper-V's [Quick Create](https://blogs.technet.microsoft.com/virtualization/2017/01/20/a-closer-look-at-vm-quick-create/) to set up a VM 
+2. Once signed in to your VM, visit this project in a web browser and click one of the script links in the Readme
 
 # Legal
 Please read before using scripts.   
