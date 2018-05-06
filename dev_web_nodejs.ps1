@@ -33,7 +33,7 @@ choco install -y Googlechrome
 
 #--- Fonts ---
 choco install -y inconsolata
-choco install -y ubuntu.font
+# choco install -y ubuntu.font
 
 #--- Tools ---
 choco install -y nodejs-lts # Node.js LTS, Recommended for most users

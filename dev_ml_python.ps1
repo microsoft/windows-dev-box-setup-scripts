@@ -27,7 +27,7 @@ Add-AppxPackage -Path ~/Ubuntu.appx
 
 #--- Fonts ---
 choco install -y inconsolata
-choco install -y ubuntu.font
+# choco install -y ubuntu.font
 
 #--- Tools ---
 choco install -y docker-for-windows

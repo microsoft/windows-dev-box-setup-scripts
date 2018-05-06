@@ -50,7 +50,7 @@ choco install -y firefox
 
 #--- Fonts ---
 choco install -y inconsolata
-choco install -y ubuntu.font
+# choco install -y ubuntu.font
 
 #--- Tools ---
 choco install -y sysinternals

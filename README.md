@@ -14,10 +14,10 @@ To run a setup script, click a link in the table below from your target machine.
 |Click link to run  |Description  |
 |---------|---------|
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1?token=AK0OHpRu7iHVJgnn7DsbBumVp2C4ljleks5a9LuJwA%3D%3D'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1?token=AK0OHhoec2cUUr7i0KVnUReiLhzNPGxXks5a9LugwA%3D%3D'>Web</a> | Web (VS Code, Multiple Browsers)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1?token=AK0OHhoec2cUUr7i0KVnUReiLhzNPGxXks5a9LugwA%3D%3D'>Web</a> | Web (VS Code, WSL, Multiple Browsers)        |
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_python.ps1?token=AK0OHlnLMyOh0kDKVIatauMY6zNoHGZ5ks5a-HyQwA%3D%3D'>Machine Learning</a>| Machine Learning (Python, WSL, VS Code)        |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
-|    | Machine Learning        |
 |     | Containers (Kubernetes, etc...)        |
 |     | More Coming Soon!        |
 
