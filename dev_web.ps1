@@ -28,7 +28,6 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 #--- Ubuntu ---
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
 Add-AppxPackage -Path ~/Ubuntu.appx
-Ubuntu.exe
 
 <#
 #--- SLES ---
@@ -58,7 +57,6 @@ choco install -y sysinternals
 choco install -y docker-for-windows
 choco install -y python
 choco install -y pip
-choco install -y easy.install
 
 Enable-UAC
 Enable-MicrosoftUpdate
