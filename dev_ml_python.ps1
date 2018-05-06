@@ -1,6 +1,10 @@
 # Description: Boxstarter Script
 # Author: Microsoft
+<<<<<<< HEAD
 # Common dev settings for machine learning
+=======
+# Common dev settings for web development
+>>>>>>> origin
 
 Disable-UAC
 
@@ -22,8 +26,13 @@ choco install -y Microsoft-Hyper-V-All -source windowsFeatures
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
 #--- Ubuntu ---
+<<<<<<< HEAD
 # Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
 # Add-AppxPackage -Path ~/Ubuntu.appx
+=======
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Add-AppxPackage -Path ~/Ubuntu.appx
+>>>>>>> origin
 
 #--- Fonts ---
 choco install -y inconsolata
