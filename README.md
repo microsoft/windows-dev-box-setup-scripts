@@ -49,10 +49,5 @@ Chocolately has implemented security safeguards in their process to help protect
 
 Our project is subject to the MIT License and we make no warranties, express or implied of any kind.   In no event is Microsoft or contributing copyright holders be liable for any claim, damages or other liability arising from out of or in connection with the use of the project software or the use of other dealings in the project software.
 
-#### We use telemetry to understand project use
-When running a script, the URL of the script may be be sent to Microsoft to help us better understand script usage and community interest in different scenarios. To opt-out of this data collection you can skip using the links in the table on the Readme. You can still run the scripts by manually pasting the raw script link after the boxstarter URL. For example:
-
-    http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D
-
 # Contributing
 Do you want to contribute? We would love your help. Here are our <a href="CONTRIBUTING.md">contribution guidelines</a>.
