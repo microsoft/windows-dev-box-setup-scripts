@@ -18,7 +18,7 @@ To run a setup script, click a link in the table below from your target machine.
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1?token=AK0OHg--lXI4lmyAFY_wN2CKxWnUaaSRks5a8VJjwA%3D%3D'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_python.ps1?token=AK0OHlnLMyOh0kDKVIatauMY6zNoHGZ5ks5a-HyQwA%3D%3D'>Machine Learning</a>| Machine Learning (Python, WSL, VS Code)        |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
-|     | Containers (Kubernetes, etc...)        |
+|     | Containers (Docker, Kubernetes, etc...)        |
 |     | More Coming Soon!        |
 
 ## Working with Chocolatey in an organization?
@@ -29,7 +29,8 @@ Are you in an environment where you don't have any administrative access on your
 
 For alternative means of deploying "portable" software and installing Chocolatey without administrative access, please see Chocolatey's documentation on [Non-Administrative Install](https://chocolatey.org/install#non-administrative-install). Unfortunately you won't be able to take advantage of Boxstarter, but you will find resources and an example script that gives you a quick setup of Chocolatey and installation of a few packages.
 
-**NOTE:** It's really important to point out that Chocolatey is not going to magically allow you to install software that requires administrative access (at least not with the open source edition), so you will need to find packages that are portable or create those and push them to the community repository or your internal sources.
+**NOTE:** 
+It's important to point out the open source edition of the Chocolatey client will not allow you to magically install software that requires administrative access, so you will need to find packages that are portable or create those and push them to the community repository or your internal sources.
 
 ## Setting up a VM
 Windows 10 VM setup instructions
