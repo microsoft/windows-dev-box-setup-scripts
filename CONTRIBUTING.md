@@ -1,4 +1,4 @@
- Contributing to Windows Dev Box Setup Scripts
+## Contributing to Windows Dev Box Setup Scripts
 
 The goal for **Windows Dev Box Setup Scripts** is to help developers get their dev box up and going quickly.
 

@@ -1,12 +1,11 @@
 # Description: Boxstarter Script  
 # Author: Microsoft
-# Common dev settings
+# Common dev settings for web dev
 
 Disable-UAC
 
 #--- Windows Features ---
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
-
 
 #--- File Explorer Settings ---
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
@@ -22,12 +21,11 @@ choco install -y 7zip.install
 
 #--- Windows Subsystems/Features ---
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-# Your system will prompt you to restart
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+choco install Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
 #--- Ubuntu ---
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
-Add-AppxPackage -Path ~/Ubuntu.appx
+# Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
+# Add-AppxPackage -Path ~/Ubuntu.appx
 
 <#
 #--- SLES ---

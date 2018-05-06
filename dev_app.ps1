@@ -1,5 +1,6 @@
 # Description: Boxstarter Script  
 # Author: Microsoft
+# Common dev settings for desktop app development
 
 Disable-UAC
 
@@ -19,7 +20,9 @@ choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #--- Tools ---
 choco install -y visualstudio2017community  # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
 choco install -y sysinternals
-choco install -y docker-for-windows
+# choco install -y docker-for-windows
+
+# TODO: should pass install args to VS2017 to install additional options 
 
 Enable-UAC
 Enable-MicrosoftUpdate
