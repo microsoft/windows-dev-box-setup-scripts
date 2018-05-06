@@ -35,6 +35,8 @@ choco install -y python
 choco install -y pip
 choco install -y 7zip.install
 
+# TODO: install additional ML tools
+
 #--- VS Code ---
 choco install -y visualstudiocode
 
@@ -44,24 +46,3 @@ choco install -y vscode-docker
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-•	Python 3.x with the deep learning frameworks installed + matplotlib, numpy)
-•	VS Code with Python and a few other things.
-•	Linux Subsystem for Windows
-o	With Python 3.x installed (and the same packages)
-o	With Git, ssh, grep and other “classic” tools installed
-•	Although I don’t use this yet, for Philly, I have Docker installed.
-
