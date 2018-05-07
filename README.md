@@ -24,7 +24,16 @@ To run a setup script, click a link in the table below from your target machine.
 ## Working with Chocolatey in an organization?
 As an organization, you may not be keen to reach out to the internet. That's fine as with just a few modifications you can still take advantage of these scripts. Visit the [organizational use page](ORGANIZATION.md) to learn how.
 
-**NOTE:** 
+
+## Don't have administrative access?
+Are you in an environment where you don't have any administrative access on your machine? No problem, you can still take advantage of Chocolatey and manage "portable" software. You can also use a VM where you may have administrative access (see next section).
+
+For alternative means of deploying "portable" software and installing Chocolatey without administrative access, please see Chocolatey's documentation on [Non-Administrative Install](https://chocolatey.org/install#non-administrative-install). Unfortunately you won't be able to take advantage of Boxstarter, but you will find resources and an example script that gives you a quick setup of Chocolatey and installation of a few packages.
+
+**NOTE:**
+It's important to point out the open source edition of the Chocolatey client will not allow you to magically install software that requires administrative access, so you will need to find packages that are portable or create those and push them to the community repository or your internal sources.
+
+**NOTE:**
 While Chocolatey does not require administrative privileges, some of Boxstarter's functionality does require administrative privileges to run, and it will prompt to elevate to administrator if not already elevated.
 
 ## Setting up a VM
