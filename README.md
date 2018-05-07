@@ -37,7 +37,7 @@ It's important to point out the open source edition of the Chocolatey client wil
 
 ## Setting up a VM
 Windows 10 VM setup instructions
-1. Use Hyper-V's [Quick Create](https://blogs.technet.microsoft.com/virtualization/2017/01/20/a-closer-look-at-vm-quick-create/) to set up a VM
+1. Use Hyper-V's [Quick Create](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) to set up a VM
 2. Once signed in to your VM, visit this project in a web browser and click one of the script links in the Readme
 
 # Legal
