@@ -25,7 +25,7 @@ To run a setup script, click a link in the table below from your target machine.
 As an organization, you may not be keen to reach out to the internet. That's fine as with just a few modifications you can still take advantage of these scripts. Visit the [organizational use page](ORGANIZATION.md) to learn how.
 
 **NOTE:** 
-While Chocolatey does not require administrative privileges, some of Boxstarter's functionality does require administrative privileges to run, and It will prompt to elevate to administrator if not already elevated.
+While Chocolatey does not require administrative privileges, some of Boxstarter's functionality does require administrative privileges to run, and it will prompt to elevate to administrator if not already elevated.
 
 ## Setting up a VM
 Windows 10 VM setup instructions
