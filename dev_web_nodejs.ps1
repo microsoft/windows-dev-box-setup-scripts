@@ -16,7 +16,6 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 #--- Tools ---
 choco install -y visualstudiocode
 choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
-choco install -y Git-Credential-Manager-for-Windows
 choco install -y 7zip.install
 
 #--- Windows Subsystems/Features ---
