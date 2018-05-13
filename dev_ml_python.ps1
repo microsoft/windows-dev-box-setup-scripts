@@ -31,7 +31,6 @@ choco install -y inconsolata
 #--- Tools ---
 choco install -y docker-for-windows
 choco install -y python
-choco install -y pip
 choco install -y 7zip.install
 
 # TODO: install additional ML tools
