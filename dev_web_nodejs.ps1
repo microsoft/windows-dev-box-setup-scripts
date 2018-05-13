@@ -42,7 +42,6 @@ choco install -y visualstudio2017-workload-vctools
 choco install -y sysinternals
 choco install -y docker-for-windows
 choco install -y python2 # Node.js requires Python 2 to build native modules
-choco install -y pip
 
 Enable-UAC
 Enable-MicrosoftUpdate
