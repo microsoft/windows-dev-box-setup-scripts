@@ -53,7 +53,6 @@ choco install -y inconsolata
 choco install -y sysinternals
 choco install -y docker-for-windows
 choco install -y python
-choco install -y pip
 
 Enable-UAC
 Enable-MicrosoftUpdate
