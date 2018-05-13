@@ -36,7 +36,7 @@ choco install -y 7zip.install
 # TODO: install additional ML tools
 
 #--- VS Code ---
-choco install -y visualstudiocode
+choco install -y vscode
 
 #--- VS Code extensions ---
 choco install -y vscode-docker
