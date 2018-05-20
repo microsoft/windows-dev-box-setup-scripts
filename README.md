@@ -6,6 +6,9 @@ These scripts leverage two popular open source projects.
 - Boxstarter [boxstarter.org](http://boxstarter.org)
 - Chocolatey [chocolatey.org](http://chocolatey.org)
 
+Boxstarter is a wrapper for Chocolatey and includes features like managing reboots for you. We're using the Boxstarter web launcher to start the installation process:<br/>
+https://boxstarter.org/Learn/WebLauncher
+
 ## How to run the scripts
 Before you begin, please read the [Legal](#Legal) section.
 
@@ -21,9 +24,11 @@ To run a setup script, click a link in the table below from your target machine.
 |     | Containers (Docker, Kubernetes, etc...)        |
 |     | More Coming Soon!        |
 
+## Known issues
+1. Windows 1803 is not successfully launching Boxstarter via the web launcher. This is actively under investigation and there are workarounds such as running Boxstarter locally.  See this issue for details: https://github.com/chocolatey/boxstarter/issues/301
+
 ## Working with Chocolatey in an organization?
 As an organization, you may not be keen to reach out to the internet. That's fine as with just a few modifications you can still take advantage of these scripts. Visit the [organizational use page](ORGANIZATION.md) to learn how.
-
 
 ## Don't have administrative access?
 Are you in an environment where you don't have any administrative access on your machine? No problem, you can still take advantage of Chocolatey and manage "portable" software. You can also use a VM where you may have administrative access (see next section).
