@@ -25,7 +25,7 @@ To run a setup script, click a link in the table below from your target machine.
 |     | More Coming Soon!        |
 
 **Notes:**  
-¹ If you're a Node.js contributor working on Node.js core, please see the [Node.js Bootstrapping Guide](https://github.com/nodejs/node/tree/master/tools/bootstrap).
+¹ If you're a Node.js contributor working on Node.js core, please see the [Node.js Bootstrapping Guide](https://github.com/nodejs/node/tree/master/tools/bootstrap) or [click here to run](http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/nodejs/node/master/tools/bootstrap/windows_boxstarter).
 
 ## Known issues
 - Windows 1803 is not successfully launching Boxstarter via the web launcher. This is actively under investigation and there are workarounds such as running Boxstarter locally.  See this issue for details: https://github.com/chocolatey/boxstarter/issues/301
