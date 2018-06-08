@@ -11,7 +11,7 @@ Disable-UAC
 #choco install -y docker-for-windows
 
 #File Explorer remote call
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/crutkas/windows-dev-box-setup-scripts/TestRemotePs/helper_WindowsExplorerSettings.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/crutkas/windows-dev-box-setup-scripts/TestRemotePs/helper_SetFileExplorer.ps1'))
 
 
 #--- VS 2017 uwp and azure workloads + git tools ---
