@@ -10,18 +10,9 @@ Disable-UAC
 #choco install -y sysinternals
 #choco install -y docker-for-windows
 
-#--- Configuring Windows properties ---
-#--- Windows Features ---
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
+#File Explorer remote call
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/crutkas/windows-dev-box-setup-scripts/TestRemotePs/helper_WindowsExplorerSettings.ps1'))
 
-#--- File Explorer Settings ---
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneShowAllFolders -Value 1
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name LaunchTo -Value 1
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
-
-#--- Enabling developer mode on the system ---
-Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
 
 #--- VS 2017 uwp and azure workloads + git tools ---
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
