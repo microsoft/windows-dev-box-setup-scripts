@@ -4,7 +4,7 @@
 
 Disable-UAC
 
-invoke-expression -Command https://raw.githubusercontent.com/crutkas/windows-dev-box-setup-scripts/master/helper_WindowsExplorerSettings.ps1
+invoke-expression -ConnectionUri https://raw.githubusercontent.com/crutkas/windows-dev-box-setup-scripts/master/helper_WindowsExplorerSettings.ps1
 
 #--- VS 2017 uwp and azure workloads + git tools ---
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
