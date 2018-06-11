@@ -48,6 +48,9 @@ opensuse-42.exe
 choco install -y googlechrome
 choco install -y firefox
 
+#--- Microsoft WebDriver ---
+choco install -y microsoftwebdriver
+
 #--- Fonts ---
 choco install -y inconsolata
 # choco install -y ubuntu.font
