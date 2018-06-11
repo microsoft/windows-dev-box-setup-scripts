@@ -1,5 +1,5 @@
 # installing Windows Template Studio VSIX
-$requestUri = 'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery'
+$requestUri = "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery"
 $requestBody = '{"flags":"262","filters":[{"criteria":[{"filterType":"10","value":"windows template studio"}],"sortBy":"0","sortOrder":"2","pageSize":"25","pageNumber":"1"}]}'
 $requestHeaders = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $requestHeaders.Add('Accept','application/json; api-version=3.2-preview.1')
@@ -13,7 +13,9 @@ $wtsFileUrl = $wtsResults.versions[0].files | where {$_.assetType -eq "Microsoft
 
 $wtsVsix = [System.IO.Path]::GetFileName($wtsFileUrl.source)
 $wtsFullPath = [System.IO.Path]::Combine((Resolve-Path .\).Path, $wtsVsix);
+
 Invoke-WebRequest -Uri $wtsFileUrl.source -OutFile $wtsVsix
+
 $vsixInstallerFile = Get-Childitem -Include vsixinstaller.exe -Recurse -Path "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
 $wtsArgList = $wtsFullPath + " /q"
 

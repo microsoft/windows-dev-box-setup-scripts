@@ -10,6 +10,7 @@ Disable-UAC
 #choco install -y sysinternals
 #choco install -y docker-for-windows
 
+# should move to a config file
 $user = "crutkas";
 $baseBranch = "master";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
