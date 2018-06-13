@@ -15,7 +15,7 @@ $wtsVsix = [System.IO.Path]::GetFileName($wtsFileUrl.source)
 $desktopPath = Resolve-Path $env:USERPROFILE\desktop
 $wtsFullPath = [System.IO.Path]::Combine($desktopPath, $wtsVsix);
 
-Invoke-WebRequest -Uri $wtsFileUrl.source -OutFile $wtsVsix
+Invoke-WebRequest -Uri $wtsFileUrl.source -OutFile `"$wtsVsix`"
 
 $vsixInstallerFile = Get-Childitem -Include vsixinstaller.exe -Recurse -Path "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
 $wtsArgList = $wtsFullPath + " /q"
