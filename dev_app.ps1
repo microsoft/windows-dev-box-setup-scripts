@@ -7,12 +7,14 @@ Disable-UAC
 #--- Windows Subsystems/Features ---
 #choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
 #choco install -y sysinternals
 #choco install -y docker-for-windows
 
 # should move to a config file
-$user = "crutkas";
-$baseBranch = "master";
+$user = "Microsoft";
+$baseBranch = "BreakUpScripts";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
 
 #Setting up Windows
