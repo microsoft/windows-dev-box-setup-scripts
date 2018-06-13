@@ -18,8 +18,8 @@ $baseBranch = "BreakUpScripts";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
 
 #Setting up Windows
-executeScript("FileExplorerSettings.ps1");
-executeScript("RemoveDefaultApps.ps1");
+executeScript "FileExplorerSettings.ps1";
+executeScript "RemoveDefaultApps.ps1";
 
 #--- Tools ---
 #--- VS 2017 uwp and azure workloads + git tools ---
@@ -31,8 +31,8 @@ RefreshEnv #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio
 choco install visualstudio2017-workload-universal
-executeScript("WindowsTemplateStudio.ps1");
-executeScript("GetUwpSamplesOffGithub.ps1");
+executeScript "WindowsTemplateStudio.ps1";
+executeScript "GetUwpSamplesOffGithub.ps1";
 
 #--- reenabling critial items ---
 Enable-UAC
