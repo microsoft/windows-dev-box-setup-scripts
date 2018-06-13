@@ -20,6 +20,6 @@ Invoke-WebRequest -Uri $wtsFileUrl.source -OutFile $wtsVsix
 $vsixInstallerFile = Get-Childitem -Include vsixinstaller.exe -Recurse -Path "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
 $wtsArgList = $wtsFullPath + " /q"
 
-$vsixInstallerResult = Start-Process -FilePath $vsixInstallerFile.FullName -ArgumentList $wtsArgList -Wait -PassThru;
+$vsixInstallerResult = Start-Process -FilePath $vsixInstallerFile.FullName -ArgumentList `"$wtsArgList`" -Wait -PassThru;
 
 Remove-Item $wtsVsix
