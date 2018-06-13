@@ -1,5 +1,12 @@
 #--- Uninstall unecessary applications that come with Windows out of the box ---
 
+	Write-Host "Unpinning all Start Menu tiles..."
+	Get-ChildItem -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Include "*.group" -Recurse | ForEach-Object {
+		$data = (Get-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data").Data -Join ","
+		$data = $data.Substring(0, $data.IndexOf(",0,202,30") + 9) + ",0,202,80,0,0"
+		Set-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data" -Type Binary -Value $data.Split(",")
+	}
+  
 # 3D Builder
 Get-AppxPackage Microsoft.3DBuilder | Remove-AppxPackage
 
