@@ -12,9 +12,9 @@ $wtsResults = $jsonResults.results[0].extensions | where {$_.extensionName -eq "
 $wtsFileUrl = $wtsResults.versions[0].files | where {$_.assetType -eq "Microsoft.Templates.2017.vsix"}
 
 $wtsVsix = [System.IO.Path]::GetFileName($wtsFileUrl.source)
-echo Resolve-Path $env:USERPROFILE\desktop
-echo Resolve-Path $env:USERPROFILE
-echo $env:USERPROFILE + "\desktop\"+ $wtsVsix;
+Write-Host Resolve-Path $env:USERPROFILE\desktop
+Write-Host Resolve-Path $env:USERPROFILE
+Write-Host $env:USERPROFILE + "\desktop\"+ $wtsVsix;
 $wtsFullPath = [System.IO.Path]::Combine((Resolve-Path $env:USERPROFILE\desktop).Path, $wtsVsix);
 
 Invoke-WebRequest -Uri $wtsFileUrl.source -OutFile $wtsVsix
