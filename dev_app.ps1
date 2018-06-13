@@ -2,12 +2,6 @@
 # Author: Microsoft
 # Common dev settings for desktop app development
 
-
-function executeScript {
-	Param ([string]$script)
-	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
-}
-
 Disable-UAC
 
 #--- Windows Subsystems/Features ---
@@ -44,3 +38,8 @@ executeScript("GetUwpSamplesOffGithub.ps1");
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+
+
+function executeScript($script) {
+	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
+}
