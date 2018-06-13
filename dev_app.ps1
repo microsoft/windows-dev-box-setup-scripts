@@ -4,6 +4,10 @@
 
 Disable-UAC
 
+function executeScript($script) {
+	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
+}
+
 #--- Windows Subsystems/Features ---
 #choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #choco install -y Microsoft-Hyper-V-All -source windowsFeatures
@@ -38,8 +42,3 @@ executeScript "GetUwpSamplesOffGithub.ps1";
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
-
-
-function executeScript($script) {
-	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
-}
