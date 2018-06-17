@@ -22,8 +22,8 @@ executeScript "RemoveDefaultApps.ps1";
 #--- Windows Subsystems/Features ---
 #choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 #choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V 
 #choco install -y sysinternals
 #choco install -y docker-for-windows
 RefreshEnv
