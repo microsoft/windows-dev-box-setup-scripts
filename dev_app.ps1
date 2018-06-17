@@ -4,14 +4,6 @@
 
 Disable-UAC
 
-#--- Windows Subsystems/Features ---
-#choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
-#choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
-#choco install -y sysinternals
-#choco install -y docker-for-windows
-
 # see if we can't get calling URL somehow, that would eliminate this need
 # should move to a config file
 $user = "Microsoft";
@@ -21,6 +13,15 @@ $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-s
 #Setting up Windows
 executeScript("FileExplorerSettings.ps1");
 executeScript("RemoveDefaultApps.ps1");
+
+#--- Windows Subsystems/Features ---
+#choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
+#choco install -y Microsoft-Hyper-V-All -source windowsFeatures
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V 
+#choco install -y sysinternals
+#choco install -y docker-for-windows
+RefreshEnv
 
 #--- Tools ---
 #--- VS 2017 uwp and azure workloads + git tools ---
