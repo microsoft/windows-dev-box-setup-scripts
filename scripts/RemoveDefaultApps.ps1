@@ -8,6 +8,12 @@ Write-Host "Uninstall unecessary applications that come with Windows out of the 
 # https://gist.github.com/alirobe/7f3b34ad89a159e6daa1
 # https://github.com/W4RH4WK/Debloat-Windows-10/blob/master/scripts/remove-default-apps.ps1
 
+function removeApp {
+	Param ([string]$appName)
+	Write-Output "Trying to remove $appName"
+	Get-AppxPackage $appName -AllUsers | Remove-AppxPackage
+	Get-AppXProvisionedPackage -Online | Where DisplayNam -like $appName | Remove-AppxProvisionedPackage -Online
+}
 
 $applicationList = @(
 	"Microsoft.BingFinance"
@@ -58,11 +64,4 @@ $applicationList = @(
 
 foreach ($app in $applicationList) {
     removeApp $app
-}
-
-function removeApp {
-	Param ([string]$appName)
-	Write-Output "Trying to remove $appName"
-	Get-AppxPackage $appName -AllUsers | Remove-AppxPackage
-	Get-AppXProvisionedPackage -Online | Where DisplayNam -like $appName | Remove-AppxProvisionedPackage -Online
 }
