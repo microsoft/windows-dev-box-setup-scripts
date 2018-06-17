@@ -12,6 +12,7 @@ Disable-UAC
 #choco install -y sysinternals
 #choco install -y docker-for-windows
 
+# see if we can't get calling URL somehow, that would eliminate this need
 # should move to a config file
 $user = "Microsoft";
 $baseBranch = "BreakUpScripts";
