@@ -41,6 +41,9 @@ choco install visualstudio2017-workload-universal
 executeScript "WindowsTemplateStudio.ps1";
 executeScript "GetUwpSamplesOffGithub.ps1";
 
+#--- installing VS Code
+choco install -y vscode
+
 #--- reenabling critial items ---
 Enable-UAC
 Enable-MicrosoftUpdate
