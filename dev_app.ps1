@@ -37,8 +37,7 @@ RefreshEnv
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-$vsVersion = visualstudio2017community;
-choco install -y visualstudio2017community --package-parameters "--add Microsoft.VisualStudio.Component.Git"
+choco install visualstudio2017community --package-parameters "--add Microsoft.VisualStudio.Component.Git"
 RefreshEnv #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio
