@@ -1,4 +1,6 @@
 # installing Windows Template Studio VSIX
+Write-Host "Installing Windows Template Studio" -ForegroundColor "Yellow"
+
 $requestUri = "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery"
 $requestBody = '{"flags":"262","filters":[{"criteria":[{"filterType":"10","value":"windows template studio"}],"sortBy":"0","sortOrder":"2","pageSize":"25","pageNumber":"1"}]}'
 $requestHeaders = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
