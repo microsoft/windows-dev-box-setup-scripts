@@ -37,8 +37,8 @@ RefreshEnv
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-choco install visualstudio2017community -y --norestart 
-choco upgrade visualstudio2017community -y --norestart --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
+choco install visualstudio2017community -y 
+choco upgrade visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
 
 RefreshEnv #refreshing env due to Git install
 
@@ -46,7 +46,7 @@ RefreshEnv #refreshing env due to Git install
 #choco install -y visualstudio2017-workload-azure
 #choco install -y visualstudio2017-workload-universal
 #executeScript "WindowsTemplateStudio.ps1";
-#executeScript "GetUwpSamplesOffGithub.ps1";
+executeScript "GetUwpSamplesOffGithub.ps1";
 
 #--- installing VS Code
 #choco install -y vscode
