@@ -18,14 +18,17 @@ To run a setup script, click a link in the table below from your target machine.
 |---------|---------|
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1'>Web</a> | Web (VS Code, WSL, Multiple Browsers)        |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)        |
+|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)¹        |
 |<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_python.ps1'>Machine Learning</a>| Machine Learning (Python, WSL, VS Code)        |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
 |     | Containers (Docker, Kubernetes, etc...)        |
 |     | More Coming Soon!        |
 
+**Notes:**  
+¹ If you're a Node.js contributor working on Node.js core, please see the [Node.js Bootstrapping Guide](https://github.com/nodejs/node/tree/master/tools/bootstrap) or [click here to run](http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/nodejs/node/master/tools/bootstrap/windows_boxstarter).
+
 ## Known issues
-1. Windows 1803 is not successfully launching Boxstarter via the web launcher. This is actively under investigation and there are workarounds such as running Boxstarter locally.  See this issue for details: https://github.com/chocolatey/boxstarter/issues/301
+- Windows 1803 is not successfully launching Boxstarter via the web launcher. This is actively under investigation and there are workarounds such as running Boxstarter locally.  See this issue for details: https://github.com/chocolatey/boxstarter/issues/301
 
 ## Working with Chocolatey in an organization?
 As an organization, you may not be keen to reach out to the internet. That's fine as with just a few modifications you can still take advantage of these scripts. Visit the [organizational use page](ORGANIZATION.md) to learn how.
