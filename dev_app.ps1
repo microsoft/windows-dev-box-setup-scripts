@@ -29,7 +29,7 @@ $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-s
 RefreshEnv
 
 #--- Tools ---
-#--- VS 2017 uwp and azure workloads + git tools ---
+#--- Installing VS and VS Code with Git 
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
 # https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community 
 # https://docs.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio#list-of-workload-ids-and-component-ids
@@ -38,17 +38,16 @@ RefreshEnv
 # visualstudio2017enterprise
 
 choco install visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
+choco install -y vscode
 
 RefreshEnv #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio
-#choco install -y visualstudio2017-workload-azure
-#choco install -y visualstudio2017-workload-universal
+choco install -y visualstudio2017-workload-azure
+choco install -y visualstudio2017-workload-universal
 #executeScript "WindowsTemplateStudio.ps1";
 executeScript "GetUwpSamplesOffGithub.ps1";
 
-#--- installing VS Code
-#choco install -y vscode
 
 #--- reenabling critial items ---
 Enable-UAC
