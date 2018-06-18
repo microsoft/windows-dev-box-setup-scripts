@@ -1,4 +1,4 @@
-# Description: Boxstarter Script  
+# Description: Boxstarter Script
 # Author: Microsoft
 # Common dev settings for web dev
 
@@ -15,6 +15,10 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 
 #--- Tools ---
 choco install -y vscode
+refreshenv
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension msjsdiag.debugger-for-edge
+
 choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
 choco install -y 7zip.install
 
