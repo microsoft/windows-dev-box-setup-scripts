@@ -37,8 +37,7 @@ RefreshEnv
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-choco install visualstudio2017community -y 
-choco upgrade visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
+choco install visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
 
 RefreshEnv #refreshing env due to Git install
 
