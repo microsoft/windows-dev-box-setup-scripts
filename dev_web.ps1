@@ -31,6 +31,9 @@ code --install-extension msjsdiag.debugger-for-edge
 choco install -y googlechrome
 choco install -y firefox
 
+#--- Microsoft WebDriver ---
+choco install -y microsoftwebdriver
+
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
