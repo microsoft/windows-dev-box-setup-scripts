@@ -4,25 +4,22 @@
 
 Disable-UAC
 
-function executeScript {
-	Param ([string]$script)
-	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
-}
-
 # see if we can't get calling URL somehow, that would eliminate this need
 # should move to a config file
 $user = "Microsoft";
 $baseBranch = "BreakUpScripts";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
 
-#--- Windows Subsystems/Features ---
-#choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
-#choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-#Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
-#Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V 
-#choco install -y sysinternals
-#choco install -y docker-for-windows
-RefreshEnv
+function executeScript {
+	Param ([string]$script)
+	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
+}
+
+#--- Setting up Windows ---
+executeScript "SystemConfiguration.ps1";
+executeScript "FileExplorerSettings.ps1";
+executeScript "RemoveDefaultApps.ps1";
+executeScript "CommonDevTools.ps1";
 
 #--- Tools ---
 #--- Installing VS and VS Code with Git 
@@ -34,8 +31,6 @@ RefreshEnv
 # visualstudio2017enterprise
 
 choco install visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
-choco install -y vscode
-
 RefreshEnv #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio ---
@@ -43,10 +38,6 @@ choco install -y visualstudio2017-workload-azure
 choco install -y visualstudio2017-workload-universal
 executeScript "WindowsTemplateStudio.ps1";
 executeScript "GetUwpSamplesOffGithub.ps1";
-
-#--- Setting up Windows ---
-executeScript "FileExplorerSettings.ps1";
-executeScript "RemoveDefaultApps.ps1";
 
 #--- reenabling critial items ---
 Enable-UAC
