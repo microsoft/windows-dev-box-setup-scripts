@@ -12,6 +12,7 @@ $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-s
 
 function executeScript {
 	Param ([string]$script)
+    write-host "executing $finalBaseHelperUri/$script ..."
 	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
 }
 

@@ -11,7 +11,8 @@ $baseBranch = "BreakUpScripts";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
 
 function executeScript {
-	Param ([string]$script)
+    Param ([string]$script)
+    write-host "executing $finalBaseHelperUri/$script ..."
 	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
 }
 
