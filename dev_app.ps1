@@ -7,7 +7,7 @@ Disable-UAC
 # see if we can't get calling URL somehow, that would eliminate this need
 # should move to a config file
 $user = "Microsoft";
-$baseBranch = "BreakUpScripts";
+$baseBranch = "master";
 $finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
 
 function executeScript {
