@@ -13,6 +13,7 @@ pip install scipy
 pip install pandas
 pip install matplotlib
 pip install tensorflow
+pip install keras
 
 # Get Visual Studio C++ Redistributables
 choco install vcredist2015 
