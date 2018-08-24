@@ -23,25 +23,39 @@ The core team will test the change to validate it before merging it.
 
 ## Repository Structure
 
-Scripts are named with dev_[MAJOR_AREA]_[MINORAREA].
-The Minor Area is optional. Currently the scripts are completely self contained - there is no script chaining. It would be useful to move to a tree model, and we'll update these instructions if/when that happens.
+Recipe scripts are named with **dev_[MAJOR_AREA]_[MINORAREA]**.
+The Minor Area is optional.
 
 Examples
 - dev_web_nodejs
 - dev_app_android 
 - dev_ml
 
-Current Major Areas
+Examples of Major Areas
 - web
 - app
 - ml (machine learning)
 - iot
-- backend
 
-Minor Area is open
+The recipe scripts are intended to be short.  Most of script logic should live in helper scripts which live in the **scripts** folder.  You can add to existing helper scripts or make new helper scripts.
 
-If you have a change request for Major Area please let us know by filing an issue.
+If you make a new recipe script that includes additional manual steps please create a new folder which includes your new script and a Readme with these instructions.
 
-If the script has additional steps please create a folder for your script and include a Readme with these instructions.
+## Testing a script change
+Testing script changes is best done on a clean machine.  One way to do this without modifying your primary environment is via a Virtual Machine.
+
+Here's an example of how to set up a test workflow
+1. [Install Hyper-V Manager](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)
+1. Create a new VM using [Quick Create](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)
+1. Save a [checkpoint](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/checkpoints) as your 'clean' restore point
+
+When you've made script changes to your fork you can run the updated script in this clean VM.  In this VM open a browser window and paste the 1-click link which will run your modified recipe script.
+
+`http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/dev_web_nodejs.ps
+`
+
+When you've finished testing, in Hyper-V Manager reset this VM to the clean checkpoint so it's ready the next time you test a script.
+
+
 
 Thank you!

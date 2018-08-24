@@ -9,10 +9,36 @@ These scripts leverage two popular open source projects.
 Boxstarter is a wrapper for Chocolatey and includes features like managing reboots for you. We're using the Boxstarter web launcher to start the installation process:<br/>
 https://boxstarter.org/Learn/WebLauncher
 
+## Project structure
+The script code is organized in a hierarchy
+
+**Recipes**
+A recipe is the script you run.  It calls multiple helper scripts.  These currently live in the root of the project (dev_app.ps1, dev_webnodejs.ps1, etc.) 
+
+**Helper Scripts**: A helper script performs setup routines that may be useful by many recipes. Recipes call helper scripts (you don't run helper scripts directly).  The helper scripts live in the **scripts** folder
+
+
+## You may want to customize the scripts
+These scripts should cover a lot of what you need but will not likely match your personal preferences exactly. In this case please fork the project and change the scripts however you desire. We really appreciate PR's back to this project if you have recommended changes.
+
+*Note: When you fork make sure to update these variables in your recipe*
+
+`
+$user = "Microsoft";
+$baseBranch = "master";
+`
+
+*You will also need to update the single click URL for your modified script to refer to your fork:*
+
+`http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/dev_web_nodejs.ps
+`
+
+For more info on testing your changes take a look at the [contribution guidelines](CONTRIBUTING.md).
+
 ## How to run the scripts
 Before you begin, please read the [Legal](#Legal) section.
 
-To run a setup script, click a link in the table below from your target machine. This will download Boxstarter, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the script to begin. You can then leave the job unattended and come back when it's finished.
+To run a recipe script, click a link in the table below from your target machine. This will download the Boxstarter one-click application, and prompt you for Boxstarter to run with Administrator privileges (which it needs to do its job). Clicking yes in this dialog will cause the recipe to begin. You can then leave the job unattended and come back when it's finished.
 
 |Click link to run  |Description  |
 |---------|---------|
@@ -32,6 +58,9 @@ To run a setup script, click a link in the table below from your target machine.
 
 ## Working with Chocolatey in an organization?
 As an organization, you may not be keen to reach out to the internet. That's fine as with just a few modifications you can still take advantage of these scripts. Visit the [organizational use page](ORGANIZATION.md) to learn how.
+
+## Working in education?
+In a classroom setting it's a great idea to give your students a recipe script so they can all get setup quickly and reliably. You can modify your recipe script to include downloading course materials and sample projects.  To do this, start by forking this project and follow the instructions [here](#you-may-want-to-customize-the-scripts). 
 
 ## Don't have administrative access?
 Are you in an environment where you don't have any administrative access on your machine? No problem, you can still take advantage of Chocolatey and manage "portable" software. You can also use a VM where you may have administrative access (see next section).
