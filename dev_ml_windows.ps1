@@ -21,9 +21,6 @@ executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
-executeScript "VirtualizationTools.ps1";
-
-# TODO: install additional ML tools inside the WSL distro once default user w/blank password is working
 
 Enable-UAC
 Enable-MicrosoftUpdate
