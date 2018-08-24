@@ -26,8 +26,6 @@ executeScript "GetMLPythonSamplesOffGithub.ps1";
 
 # TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
 
-
-
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
