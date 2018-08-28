@@ -30,6 +30,10 @@ executeScript "SystemConfiguration.ps1";
 # XXXYD TEMPORARY  executeScript "FileExplorerSettings.ps1";
 # XXXYD TEMPORARY  executeScript "RemoveDefaultApps.ps1";
 # XXXYD TEMPORARY  executeScript "CommonDevTools.ps1";
+
+# temporary while working on WSL tools
+choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
+
 executeScript "VirtualizationTools.ps1";
 executeScript "GetMLPythonSamplesOffGithub.ps1";
 
