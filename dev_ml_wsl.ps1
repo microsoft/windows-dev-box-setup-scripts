@@ -34,6 +34,15 @@ executeScript "VirtualizationTools.ps1";
 executeScript "GetMLPythonSamplesOffGithub.ps1";
 
 # TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804
+sudo apt-get update
+sudo apt install python-pip
+sudo apt-get install python-numpy
+sudo apt-get install python-scipy
+sudo pip install pandas
+sudo pip install -U scikit-learn
+write-host "Finished installing tools inside the WSL distro"
 
 Enable-UAC
 Enable-MicrosoftUpdate
