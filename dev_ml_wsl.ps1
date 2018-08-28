@@ -27,22 +27,26 @@ function executeScript {
 
 #--- Setting up Windows ---
 executeScript "SystemConfiguration.ps1";
-executeScript "FileExplorerSettings.ps1";
-executeScript "RemoveDefaultApps.ps1";
-executeScript "CommonDevTools.ps1";
+# XXXYD TEMPORARY  executeScript "FileExplorerSettings.ps1";
+# XXXYD TEMPORARY  executeScript "RemoveDefaultApps.ps1";
+# XXXYD TEMPORARY  executeScript "CommonDevTools.ps1";
 executeScript "VirtualizationTools.ps1";
 executeScript "GetMLPythonSamplesOffGithub.ps1";
 
 # TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
 write-host "Installing tools inside the WSL distro..."
 Ubuntu1804
-sudo apt-get update
-sudo apt install python-pip
-sudo apt-get install python-numpy
-sudo apt-get install python-scipy
-sudo pip install pandas
+echo "About to update"
+sudo apt update 
+echo "About to upgrade"
+sudo apt upgrade 
+echo "now updated, installing python and python-pip"
+sudo apt install python3 python-pip 
+echo " installing other python tools"
+sudo apt install python-numpy python-scipy pandas
 sudo pip install -U scikit-learn
-write-host "Finished installing tools inside the WSL distro"
+echo "Finished installing tools inside the WSL distro"
+exit 
 
 Enable-UAC
 Enable-MicrosoftUpdate
