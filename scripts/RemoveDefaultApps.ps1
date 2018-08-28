@@ -1,5 +1,5 @@
 #--- Uninstall unecessary applications that come with Windows out of the box ---
-Write-Host "Uninstall unecessary applications that come with Windows out of the box" -ForegroundColor "Yellow"
+Write-Host "Uninstall some applications that come with Windows out of the box" -ForegroundColor "Yellow"
 
 #Referenced to build script
 # https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update
@@ -32,7 +32,6 @@ $applicationList = @(
 	"Microsoft.MicrosoftOfficeHub"
 	"Microsoft.OneConnect"
 	"Microsoft.WindowsPhone"
-	"Microsoft.SkypeApp"
 	"Microsoft.WindowsSoundRecorder"
 	"*Solitaire*"
 	"Microsoft.MicrosoftStickyNotes"
@@ -44,13 +43,10 @@ $applicationList = @(
 	"Microsoft.NetworkSpeedTest"
 	"Microsoft.FreshPaint"
 	"Microsoft.Print3D"
-
-	#Non-Microsoft
 	"*Autodesk*"
 	"*BubbleWitch*"
 	"king.com.CandyCrush*"
 	"*Dell*"
-	"*Dropbox*"
 	"*Facebook*"
 	"*Keeper*"
 	"*Netflix*"

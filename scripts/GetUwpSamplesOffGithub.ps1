@@ -1,4 +1,4 @@
-RefreshEnv
+Update-SessionEnvironment
 cd $env:USERPROFILE\desktop
 mkdir UwpSamples
 cd UwpSamples

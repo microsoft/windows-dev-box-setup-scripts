@@ -8,8 +8,10 @@ choco install -y vscode-docker
 
 
 #--- Ubuntu ---
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
 Add-AppxPackage -Path ~/Ubuntu.appx
+
+# TODO reboot here
 
 <#
 #--- SLES ---

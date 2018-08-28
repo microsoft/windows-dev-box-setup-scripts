@@ -42,10 +42,11 @@ To run a recipe script, click a link in the table below from your target machine
 
 |Click link to run  |Description  |
 |---------|---------|
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1'>Web</a> | Web (VS Code, WSL, Multiple Browsers)        |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)¹        |
-|<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_python.ps1'>Machine Learning</a>| Machine Learning (Python, WSL, VS Code)        |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_app.ps1'>Desktop App</a>     | Windows Desktop App Development (Visual Studio, Windows SDK) |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web.ps1'>Web</a> | Web (VS Code, WSL, Multiple Browsers)        |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_web_nodejs.ps1'>Web NodeJS</a>     | Web Dev with NodeJS (Web + NodeJS LTS)¹        |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_windows.ps1'>Machine Learning Windows</a>| Machine Learning with only Windows native tools        |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/dev_ml_wsl.ps1'>Machine Learning Linux</a>| Machine Learning with Linux tools running on WSL        |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
 |     | Containers (Docker, Kubernetes, etc...)        |
 |     | More Coming Soon!        |
