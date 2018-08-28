@@ -1,10 +1,10 @@
 
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 choco install -y Microsoft-Hyper-V-All -source windowsFeatures
-# XXXYD Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
-# XXXYD Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V 
-# XXXYD TEMPORARY choco install -y docker-for-windows
-# XXXYD TEMPORARY choco install -y vscode-docker
+# alternative to above: Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
+# alternative to above: Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Hyper-V 
+choco install -y docker-for-windows
+choco install -y vscode-docker
 
 
 #--- Ubuntu ---

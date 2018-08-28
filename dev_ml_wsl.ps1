@@ -27,30 +27,20 @@ function executeScript {
 
 #--- Setting up Windows ---
 executeScript "SystemConfiguration.ps1";
-# XXXYD TEMPORARY  executeScript "FileExplorerSettings.ps1";
-# XXXYD TEMPORARY  executeScript "RemoveDefaultApps.ps1";
-# XXXYD TEMPORARY  executeScript "CommonDevTools.ps1";
-
-# temporary while working on WSL tools
-choco install -y git -params '"/GitAndUnixToolsOnPath /WindowsTerminal"'
-
+executeScript "FileExplorerSettings.ps1";
+executeScript "RemoveDefaultApps.ps1";
+executeScript "CommonDevTools.ps1";
 executeScript "VirtualizationTools.ps1";
 executeScript "GetMLPythonSamplesOffGithub.ps1";
 
 # TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
 write-host "Installing tools inside the WSL distro..."
-Ubuntu1804
-echo "About to update"
-sudo apt update 
-echo "About to upgrade"
-sudo apt upgrade 
-echo "now updated, installing python and python-pip"
-sudo apt install python3 python-pip 
-echo " installing other python tools"
-sudo apt install python-numpy python-scipy pandas
-sudo pip install -U scikit-learn
-echo "Finished installing tools inside the WSL distro"
-exit 
+Ubuntu1804 run apt update
+Ubuntu1804 run apt upgrade -y
+Ubuntu1804 run apt install python3 python-pip -y 
+Ubuntu1804 run apt install python-numpy python-scipy pandas -y
+Ubuntu1804 run pip install -U scikit-learn -y
+write-host "Finished installing tools inside the WSL distro"
 
 Enable-UAC
 Enable-MicrosoftUpdate
