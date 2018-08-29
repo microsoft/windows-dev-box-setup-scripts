@@ -23,7 +23,7 @@ These scripts should cover a lot of what you need but will not likely match your
 
 *Note: To use the Readme links for your fork you'll need to update the links to refer to your fork as follows:*
 
-`http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/RECIPE_NAME.ps
+`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/RECIPE_NAME.ps
 `
 
 For more info on testing your changes take a look at the [contribution guidelines](CONTRIBUTING.md).
