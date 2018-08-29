@@ -39,7 +39,7 @@ Ubuntu1804 run apt update
 Ubuntu1804 run apt upgrade -y
 Ubuntu1804 run apt install python3 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy pandas -y
-Ubuntu1804 run pip install -U scikit-learn -y
+Ubuntu1804 run pip install -U scikit-learn
 write-host "Finished installing tools inside the WSL distro"
 
 Enable-UAC
