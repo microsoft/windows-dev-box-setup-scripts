@@ -21,16 +21,9 @@ A recipe is the script you run.  It calls multiple helper scripts.  These curren
 ## You may want to customize the scripts
 These scripts should cover a lot of what you need but will not likely match your personal preferences exactly. In this case please fork the project and change the scripts however you desire. We really appreciate PR's back to this project if you have recommended changes.
 
-*Note: When you fork make sure to update these variables in your recipe*
+*Note: To use the Readme links for your fork you'll need to update the links to refer to your fork as follows:*
 
-`
-$user = "Microsoft";
-$baseBranch = "master";
-`
-
-*You will also need to update the single click URL for your modified script to refer to your fork:*
-
-`http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/dev_web_nodejs.ps
+`http://boxstarter.org/package/url?https://raw.githubusercontent.com/GITHUB_DOMAIN/windows-dev-box-setup-scripts/YOUR_BRANCH/RECIPE_NAME.ps
 `
 
 For more info on testing your changes take a look at the [contribution guidelines](CONTRIBUTING.md).
