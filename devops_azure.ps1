@@ -1,6 +1,6 @@
 # Description: Boxstarter Script
 # Author: Microsoft
-# Common dev settings for machine learning using Windows and Linux native tools
+# Common settings for azure devops
 
 Disable-UAC
 
@@ -22,19 +22,17 @@ function executeScript {
 }
 
 #--- Setting up Windows ---
-executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
+executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
-executeScript "CommonDevTools.ps1";
-executeScript "VirtualizationTools.ps1";
 executeScript "WSL.ps1";
 
-# TODO: now install additional ML tools inside the WSL distro once default user w/blank password is working
-write-host "Installing tools inside the WSL distro..."
-Ubuntu1804 run apt install python3 python-pip -y 
-Ubuntu1804 run apt install python-numpy python-scipy pandas -y
-Ubuntu1804 run pip install -U scikit-learn
-write-host "Finished installing tools inside the WSL distro"
+# TODO: Expand on tools/configuration options here
+
+
+#--- Browsers ---
+choco install -y googlechrome
+choco install -y firefox
 
 Enable-UAC
 Enable-MicrosoftUpdate
