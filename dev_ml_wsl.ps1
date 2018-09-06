@@ -6,11 +6,7 @@ Disable-UAC
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
-$Boxstarter | Foreach-Object { write-host "The key name is $_.Key and value is $_.Value"  }
-
 $helperUri = $Boxstarter['ScriptToCall']
-write-host "ScriptToCall is $helperUri"
-
 $strpos = $helperUri.IndexOf($bstrappackage)
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
 $helperUri = $helperUri.TrimStart("'", " ")

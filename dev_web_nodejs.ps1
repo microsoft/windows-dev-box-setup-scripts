@@ -4,16 +4,21 @@
 
 Disable-UAC
 
-# see if we can't get calling URL somehow, that would eliminate this need
-# should move to a config file
-$user = "Microsoft";
-$baseBranch = "master";
-$finalBaseHelperUri = "https://raw.githubusercontent.com/$user/windows-dev-box-setup-scripts/$baseBranch/scripts";
+# Get the base URI path from the ScriptToCall value
+$bstrappackage = "-bootstrapPackage"
+$helperUri = $Boxstarter['ScriptToCall']
+$strpos = $helperUri.IndexOf($bstrappackage)
+$helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
+$helperUri = $helperUri.TrimStart("'", " ")
+$helperUri = $helperUri.TrimEnd("'", " ")
+$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
+$helperUri += "/scripts"
+write-host "helper script base URI is $helperUri"
 
 function executeScript {
     Param ([string]$script)
-    write-host "executing $finalBaseHelperUri/$script ..."
-	iex ((new-object net.webclient).DownloadString("$finalBaseHelperUri/$script"))
+    write-host "executing $helperUri/$script ..."
+	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
 #--- Setting up Windows ---
