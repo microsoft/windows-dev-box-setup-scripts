@@ -30,9 +30,6 @@ executeScript "VirtualizationTools.ps1";
 executeScript "WSL.ps1";
 
 write-host "Installing tools inside the WSL distro..."
-Ubuntu1804 run apt update
-Ubuntu1804 run apt upgrade -y
-## Install Python tools
 Ubuntu1804 run apt install python2.7 python-pip -y 
 Ubuntu1804 run apt install python-numpy python-scipy -y
 Ubuntu1804 run pip install pandas
