@@ -27,10 +27,7 @@ executeScript "FileExplorerSettings.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
 executeScript "WSL.ps1";
-
-#--- Browsers ---
-choco install -y Firefox
-choco install -y Googlechrome
+executeScript "Browsers.ps1";
 
 #--- Tools ---
 code --install-extension msjsdiag.debugger-for-chrome

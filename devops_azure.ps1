@@ -26,13 +26,12 @@ executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "WSL.ps1";
+executeScript "HyperV.ps1";
+executeScript "Docker.ps1";
+executeScript "Browsers.ps1";
 
 # TODO: Expand on tools/configuration options here
-
-
-#--- Browsers ---
-choco install -y googlechrome
-choco install -y firefox
+# Azure CLI, Azure PS, Azure SDK, Ansible, TerraForms
 
 Enable-UAC
 Enable-MicrosoftUpdate
