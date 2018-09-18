@@ -1,6 +1,6 @@
 # Description: Boxstarter Script
 # Author: Microsoft
-# Common dev settings for machine learning using Windows and Linux native tools
+# Common settings for azure devops
 
 Disable-UAC
 
@@ -22,19 +22,16 @@ function executeScript {
 }
 
 #--- Setting up Windows ---
-executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
+executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
-executeScript "CommonDevTools.ps1";
-executeScript "HyperV.ps1";
 executeScript "WSL.ps1";
+executeScript "HyperV.ps1";
+executeScript "Docker.ps1";
+executeScript "Browsers.ps1";
 
-write-host "Installing tools inside the WSL distro..."
-Ubuntu1804 run apt install python2.7 python-pip -y 
-Ubuntu1804 run apt install python-numpy python-scipy -y
-Ubuntu1804 run pip install pandas
-
-write-host "Finished installing tools inside the WSL distro"
+# TODO: Expand on tools/configuration options here
+# Azure CLI, Azure PS, Azure SDK, Ansible, TerraForms
 
 Enable-UAC
 Enable-MicrosoftUpdate
