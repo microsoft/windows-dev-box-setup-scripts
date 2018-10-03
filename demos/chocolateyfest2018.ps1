@@ -11,8 +11,8 @@ $strpos = $helperUri.IndexOf($bstrappackage)
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
 $helperUri = $helperUri.TrimStart("'", " ")
 $helperUri = $helperUri.TrimEnd("'", " ")
-$helperUri = $helperUri.TrimEnd("demos/")
-$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
+$strpos = $helperUri.LastIndexOf("/demos/")
+$helperUri = $helperUri.Substring(0, $strpos)
 $helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
 
