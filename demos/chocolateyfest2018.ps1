@@ -1,6 +1,6 @@
 # Description: Boxstarter Script
 # Author: Microsoft
-# Common settings for web dev
+# chocolatey fest demo
 
 Disable-UAC
 
@@ -24,18 +24,27 @@ function executeScript {
 #--- Setting up Windows ---
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
-executeScript "CommonDevTools.ps1";
 executeScript "RemoveDefaultApps.ps1";
+executeScript "CommonDevTools.ps1";
+executeScript "HyperV.ps1";
 executeScript "WSL.ps1";
-executeScript "VirtualizationTools.ps1";
 
-#--- Browsers ---
-choco install -y googlechrome
-choco install -y firefox
+RefreshEnv
 
-# TODO: Expand on tools/configuration options here
-# Tools inside WSL
-# Azure CLI
+executeScript "Docker.ps1";
+executeScript "Browsers.ps1";
+
+choco install azure-cli 
+choco install azurepowershell
+choco install microsoftazurestorageexplorer
+choco install terraform 
+
+# Install tools in WSL instance
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804 run apt install ansible -y
+Ubuntu1804 run apt install nodejs -y
+
+# personalize
 
 Enable-UAC
 Enable-MicrosoftUpdate
