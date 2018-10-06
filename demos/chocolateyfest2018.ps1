@@ -59,10 +59,10 @@ git.exe clone https://github.com/microsoft/winappdriver
 git.exe clone https://github.com/microsoft/wsl
 
 # set desktop wallpaper
-Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\ghtest\chocofest.jpg'
-Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\ghtest\chocofest.jpg'
-    rundll32.exe user32.dll, UpdatePerUserSystemParameters
-
+Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\github\chocofest.jpg'
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+RefreshEnv
 
 Enable-UAC
 Enable-MicrosoftUpdate
