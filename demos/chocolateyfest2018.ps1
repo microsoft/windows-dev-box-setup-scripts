@@ -36,7 +36,7 @@ RefreshEnv
 executeScript "Docker.ps1";
 
 choco install azure-cli
-choco install azurepowershell
+Install-Module -Force Az
 choco install microsoftazurestorageexplorer
 choco install terraform
 
