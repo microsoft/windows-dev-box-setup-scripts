@@ -50,7 +50,6 @@ Ubuntu1804 run apt install nodejs -y
 # personalize
 choco install microsoft-teams
 choco install office365business
-choco install spotify
 
 # checkout recent projects
 mkdir C:\github
