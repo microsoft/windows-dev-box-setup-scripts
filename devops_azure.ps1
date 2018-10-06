@@ -26,11 +26,15 @@ executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
-executeScript "WSL.ps1";
-executeScript "HyperV.ps1";
-executeScript "Docker.ps1";
 executeScript "Browsers.ps1";
 
+executeScript "HyperV.ps1";
+RefreshEnv
+executeScript "WSL.ps1";
+RefreshEnv
+executeScript "Docker.ps1";
+
+choco install powershell-core
 choco install azure-cli 
 Install-Module -Force Az
 choco install microsoftazurestorageexplorer

@@ -35,6 +35,7 @@ executeScript "WSL.ps1";
 RefreshEnv
 executeScript "Docker.ps1";
 
+choco install powershell-core
 choco install azure-cli
 Install-Module -Force Az
 choco install microsoftazurestorageexplorer
