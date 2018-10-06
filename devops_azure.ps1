@@ -3,6 +3,7 @@
 # Common settings for azure devops
 
 Disable-UAC
+$ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
