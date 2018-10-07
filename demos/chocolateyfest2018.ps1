@@ -39,6 +39,7 @@ executeScript "Docker.ps1";
 choco install powershell-core
 choco install azure-cli
 Install-Module -Force Az
+Install-Module -Force posh-git
 choco install microsoftazurestorageexplorer
 choco install terraform
 
@@ -57,6 +58,7 @@ cd C:\github
 git.exe clone https://github.com/microsoft/windows-dev-box-setup-scripts
 git.exe clone https://github.com/microsoft/winappdriver
 git.exe clone https://github.com/microsoft/wsl
+git.exe clone https://github.com/PowerShell/PowerShell
 
 # set desktop wallpaper
 Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
