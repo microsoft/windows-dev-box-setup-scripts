@@ -3,6 +3,7 @@
 # Common settings for azure devops
 
 Disable-UAC
+$ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
@@ -25,13 +26,24 @@ function executeScript {
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
-executeScript "WSL.ps1";
-executeScript "HyperV.ps1";
-executeScript "Docker.ps1";
+executeScript "CommonDevTools.ps1";
 executeScript "Browsers.ps1";
 
-# TODO: Expand on tools/configuration options here
-# Azure CLI, Azure PS, Azure SDK, Ansible, TerraForms
+executeScript "HyperV.ps1";
+RefreshEnv
+executeScript "WSL.ps1";
+RefreshEnv
+executeScript "Docker.ps1";
+
+choco install powershell-core
+choco install azure-cli 
+Install-Module -Force Az
+choco install microsoftazurestorageexplorer
+choco install terraform 
+
+# Install tools in WSL instance
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804 run apt install ansible -y
 
 Enable-UAC
 Enable-MicrosoftUpdate

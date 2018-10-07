@@ -1,8 +1,9 @@
 # Description: Boxstarter Script
 # Author: Microsoft
-# Common settings for web dev
+# chocolatey fest demo
 
 Disable-UAC
+$ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
@@ -11,7 +12,8 @@ $strpos = $helperUri.IndexOf($bstrappackage)
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
 $helperUri = $helperUri.TrimStart("'", " ")
 $helperUri = $helperUri.TrimEnd("'", " ")
-$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
+$strpos = $helperUri.LastIndexOf("/demos/")
+$helperUri = $helperUri.Substring(0, $strpos)
 $helperUri += "/scripts"
 write-host "helper script base URI is $helperUri"
 
@@ -24,18 +26,43 @@ function executeScript {
 #--- Setting up Windows ---
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
-executeScript "CommonDevTools.ps1";
 executeScript "RemoveDefaultApps.ps1";
+executeScript "CommonDevTools.ps1";
+executeScript "Browsers.ps1";
+
+executeScript "HyperV.ps1";
+RefreshEnv
 executeScript "WSL.ps1";
-executeScript "VirtualizationTools.ps1";
+RefreshEnv
+executeScript "Docker.ps1";
 
-#--- Browsers ---
-choco install -y googlechrome
-choco install -y firefox
+choco install powershell-core
+choco install azure-cli
+Install-Module -Force Az
+choco install microsoftazurestorageexplorer
+choco install terraform
 
-# TODO: Expand on tools/configuration options here
-# Tools inside WSL
-# Azure CLI
+# Install tools in WSL instance
+write-host "Installing tools inside the WSL distro..."
+Ubuntu1804 run apt install ansible -y
+Ubuntu1804 run apt install nodejs -y
+
+# personalize
+choco install microsoft-teams
+choco install office365business
+
+# checkout recent projects
+mkdir C:\github
+cd C:\github
+git.exe clone https://github.com/microsoft/windows-dev-box-setup-scripts
+git.exe clone https://github.com/microsoft/winappdriver
+git.exe clone https://github.com/microsoft/wsl
+
+# set desktop wallpaper
+Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\github\chocofest.jpg'
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+RefreshEnv
 
 Enable-UAC
 Enable-MicrosoftUpdate
