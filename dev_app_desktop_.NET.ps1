@@ -1,4 +1,4 @@
-# Description: Boxstarter Script  
+# Description: Boxstarter Script
 # Author: Microsoft
 # Common dev settings for desktop app development
 
@@ -28,11 +28,11 @@ executeScript "RemoveDefaultApps.ps1";
 executeScript "CommonDevTools.ps1";
 
 #--- Tools ---
-#--- Installing VS and VS Code with Git 
+#--- Installing VS and VS Code with Git
 # See this for install args: https://chocolatey.org/packages/VisualStudio2017Community
-# https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community 
+# https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community
 # https://docs.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio#list-of-workload-ids-and-component-ids
-# visualstudio2017community 
+# visualstudio2017community
 # visualstudio2017professional
 # visualstudio2017enterprise
 
