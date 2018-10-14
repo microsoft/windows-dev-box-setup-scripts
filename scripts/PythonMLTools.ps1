@@ -1,5 +1,5 @@
 # Install python
-choco install python --version 3.5.4 -y
+choco install -y python --version=3.5.4
 
 # Refresh path
 refreshenv
@@ -16,4 +16,4 @@ pip install tensorflow
 pip install keras
 
 # Get Visual Studio C++ Redistributables
-choco install vcredist2015 
+choco install -y vcredist2015

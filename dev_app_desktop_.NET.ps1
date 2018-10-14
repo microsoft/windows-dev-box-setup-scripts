@@ -36,7 +36,7 @@ executeScript "CommonDevTools.ps1";
 # visualstudio2017professional
 # visualstudio2017enterprise
 
-choco install visualstudio2017community -y --package-parameters "--add Microsoft.VisualStudio.Component.Git" 
+choco install -y visualstudio2017community --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
 Update-SessionEnvironment #refreshing env due to Git install
 
 #--- UWP Workload and installing Windows Template Studio ---
