@@ -45,6 +45,7 @@ To run a recipe script, click a link in the table below from your target machine
 |<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/devops_azure.ps1'>DevOps Azure</a>| Client setup for DevOps with Azure      |
 |     | Xamarin (Visual Studio, Xamarin, Android SDK) |
 |     | Containers (Docker, Kubernetes, etc...)        |
+|     | PHP Development on Windows (IIS, MySQL, VSCode, Multiple Browsers)
 |     | Submit a PR with a recommended configuration!        |
 
 **Notes:**  
