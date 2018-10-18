@@ -35,11 +35,11 @@ executeScript "WSL.ps1";
 RefreshEnv
 executeScript "Docker.ps1";
 
-choco install powershell-core
-choco install azure-cli 
+choco install -y powershell-core
+choco install -y azure-cli
 Install-Module -Force Az
-choco install microsoftazurestorageexplorer
-choco install terraform 
+choco install -y microsoftazurestorageexplorer
+choco install -y terraform
 
 # Install tools in WSL instance
 write-host "Installing tools inside the WSL distro..."
