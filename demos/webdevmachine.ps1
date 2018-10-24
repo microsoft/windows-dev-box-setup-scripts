@@ -43,6 +43,10 @@ Install-Module -Force posh-git
 choco install -y microsoftazurestorageexplorer
 choco install -y terraform
 
+# Get NodeJS
+choco install -y nodejs.install
+RefreshEnv
+
 # Install tools in WSL instance
 write-host "Installing tools inside the WSL distro..."
 Ubuntu1804 run apt install ansible -y
@@ -62,7 +66,7 @@ git.exe clone https://github.com/PowerShell/PowerShell
 ## Get a NodeJS Demo
 git.exe clone https://github.com/gtsopour/nodejs-shopping-cart.git
 cd C:\github\nodejs-shopping-cart
-Ubuntu1804 run npm install
+npm install
 
 # set desktop wallpaper
 Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
