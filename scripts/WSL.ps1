@@ -1,4 +1,4 @@
-if ((Get-WmiObject Win32_OperatingSystem).BuildNumber -ge 14316) {
+if ([Environment]::Is64BitOperatingSystem -and (Get-WmiObject Win32_OperatingSystem).BuildNumber -ge 14316) {
   choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
 
   #--- Ubuntu ---
