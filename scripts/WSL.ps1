@@ -1,4 +1,5 @@
-choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
+# choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
+Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName Microsoft-Windows-Subsystem-Linux
 
 #--- Ubuntu ---
 # TODO: Move this to choco install once --root is included in that package
