@@ -21,6 +21,8 @@ function executeScript {
 	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
+executeScript "CompatibilityChecks.ps1";
+
 #--- Setting up Windows ---
 executeScript "SystemConfiguration.ps1";
 executeScript "FileExplorerSettings.ps1";
