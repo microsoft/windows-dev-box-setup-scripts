@@ -1,8 +1,8 @@
 if (
-  [Environment]::Is64BitOperatingSystem -and (
+  (Is-64Bit) -and (
     (
       (
-        (Get-WmiObject Win32_OperatingSystem).ProductType -lt 2) -and (Get-WmiObject Win32_OperatingSystem).BuildNumber -ge 14316
+        (-Not (Is-Server)) -and (Get-WmiObject Win32_OperatingSystem).BuildNumber -ge 14316
       ) -or
     (Get-WmiObject Win32_OperatingSystem).BuildNumber -ge 16299
     )
