@@ -1,4 +1,4 @@
-#--- Uninstall unecessary applications that come with Windows out of the box ---
+#--- Uninstall unnecessary applications that come with Windows out of the box ---
 Write-Host "Uninstall some applications that come with Windows out of the box" -ForegroundColor "Yellow"
 
 #Referenced to build script
