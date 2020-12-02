@@ -36,7 +36,7 @@ executeScript "CommonDevTools.ps1";
 # visualstudio2019professional
 # visualstudio2019enterprise
 
-choco install -y visualstudio2019professional --package-parameters="'--add Microsoft.VisualStudio.Component.Git'"
+choco install -y visualstudio2019professional
 Update-SessionEnvironment #refreshing env due to Git install
 
 choco install -y visualstudio2019-workload-manageddesktop
