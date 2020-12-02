@@ -67,6 +67,8 @@ choco install -y slack
 
 choco install -y sidequest
 
+choco install -y yubico-authenticator
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
