@@ -83,6 +83,8 @@ choco install -y jetbrains-rider
 
 choco install -y sqlitebrowser
 
+choco install -y sqlite.shell
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
