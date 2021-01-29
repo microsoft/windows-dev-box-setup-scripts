@@ -81,6 +81,8 @@ choco install -y vlc
 
 choco install -y jetbrains-rider
 
+choco install -y sqlitebrowser
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
