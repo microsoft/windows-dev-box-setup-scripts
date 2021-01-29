@@ -69,6 +69,18 @@ choco install -y sidequest
 
 choco install -y yubico-authenticator
 
+choco install -y windirstat
+
+choco install -y audacity
+
+choco install -y obs-studio
+
+choco install -y adobereader
+
+choco install -y vlc
+
+choco install -y jetbrains-rider
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
