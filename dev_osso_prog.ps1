@@ -85,6 +85,8 @@ choco install -y sqlitebrowser
 
 choco install -y sqlite.shell
 
+choco install microsoft-windows-terminal
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
