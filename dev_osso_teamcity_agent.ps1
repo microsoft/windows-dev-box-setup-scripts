@@ -59,6 +59,8 @@ choco install -y notepadplusplus
 
 choco install -y windirstat
 
+choco install microsoft-windows-terminal
+
 executeScript "HyperV.ps1";
 RefreshEnv
 executeScript "WSL.ps1";
