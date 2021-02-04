@@ -63,7 +63,8 @@ choco install microsoft-windows-terminal
 
 executeScript "HyperV.ps1";
 RefreshEnv
-executeScript "WSL.ps1";
+# executeScript "WSL.ps1";
+choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
 RefreshEnv
 executeScript "Docker.ps1";
 
