@@ -74,6 +74,9 @@ choco install -y azure-cli
 # Install-Module -Force Az
 choco install -y microsoftazurestorageexplorer
 
+# enable long filenames for git
+git config --system core.longpaths true
+
 #--- reenabling critical items ---
 Enable-UAC
 Enable-MicrosoftUpdate
