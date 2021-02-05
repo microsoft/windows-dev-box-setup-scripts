@@ -70,7 +70,8 @@ executeScript "Docker.ps1";
 
 choco install -y powershell-core
 choco install -y azure-cli
-Install-Module -Force Az
+# This seems to hang for some reason, commenting out
+# Install-Module -Force Az
 choco install -y microsoftazurestorageexplorer
 
 #--- reenabling critical items ---
