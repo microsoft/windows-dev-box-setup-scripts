@@ -95,8 +95,13 @@ executeScript "Docker.ps1";
 
 choco install -y powershell-core
 choco install -y azure-cli
-Install-Module -Force Az
+# This seems to hang for some reason, commenting out
+# Install-Module -Force Az
 choco install -y microsoftazurestorageexplorer
+
+# enable long filenames for git
+Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled -Value 1
+git config --system core.longpaths true
 
 #--- reenabling critical items ---
 Enable-UAC
