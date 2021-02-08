@@ -36,56 +36,60 @@ executeScript "CommonDevTools.ps1";
 # visualstudio2019professional
 # visualstudio2019enterprise
 
+# work around a boxstarter bug creating nested temp dirs: https://github.com/chocolatey/boxstarter/issues/442
+$boxstarterTempDir = 'C:\temp'
+mkdir $boxstarterTempDir -Force
+
 choco install -y visualstudio2019professional
 Update-SessionEnvironment #refreshing env due to Git install
 
-choco install -y visualstudio2019-workload-manageddesktop
-choco install -y visualstudio2019-workload-azure
-choco install -y visualstudio2019-workload-netcoretools
-choco install -y visualstudio2019-workload-managedgame
+choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019-workload-manageddesktop
+choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019-workload-azure
+choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019-workload-netcoretools
+choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019-workload-managedgame
 
-choco install -y dotnet-5.0-sdk
+choco install --cacheLocation=$boxStarterTempDir -y dotnet-5.0-sdk
 
-choco install -y unity-hub
+choco install --cacheLocation=$boxStarterTempDir -y unity-hub
 
-choco install -y everything
+choco install --cacheLocation=$boxStarterTempDir -y everything
 
-choco install -y github-desktop
-choco install -y gh
+choco install --cacheLocation=$boxStarterTempDir -y github-desktop
+choco install --cacheLocation=$boxStarterTempDir -y gh
 
-choco install -y sourcetree
+choco install --cacheLocation=$boxStarterTempDir -y sourcetree
 
-choco install -y kdiff3
+choco install --cacheLocation=$boxStarterTempDir -y kdiff3
 
-choco install -y notepadplusplus
+choco install --cacheLocation=$boxStarterTempDir -y notepadplusplus
 
-choco install -y dropbox
+choco install --cacheLocation=$boxStarterTempDir -y dropbox
 
-choco install -y zoom
+choco install --cacheLocation=$boxStarterTempDir -y zoom
 
-choco install -y slack
+choco install --cacheLocation=$boxStarterTempDir -y slack
 
-choco install -y sidequest
+choco install --cacheLocation=$boxStarterTempDir -y sidequest
 
-choco install -y yubico-authenticator
+choco install --cacheLocation=$boxStarterTempDir -y yubico-authenticator
 
-choco install -y windirstat
+choco install --cacheLocation=$boxStarterTempDir -y windirstat
 
-choco install -y audacity
+choco install --cacheLocation=$boxStarterTempDir -y audacity
 
-choco install -y obs-studio
+choco install --cacheLocation=$boxStarterTempDir -y obs-studio
 
-choco install -y adobereader
+choco install --cacheLocation=$boxStarterTempDir -y adobereader
 
-choco install -y vlc
+choco install --cacheLocation=$boxStarterTempDir -y vlc
 
-choco install -y jetbrains-rider
+choco install --cacheLocation=$boxStarterTempDir -y jetbrains-rider
 
-choco install -y sqlitebrowser
+choco install --cacheLocation=$boxStarterTempDir -y sqlitebrowser
 
-choco install -y sqlite.shell
+choco install --cacheLocation=$boxStarterTempDir -y sqlite.shell
 
-choco install microsoft-windows-terminal
+choco install --cacheLocation=$boxStarterTempDir -y microsoft-windows-terminal
 
 executeScript "HyperV.ps1";
 RefreshEnv
@@ -93,11 +97,11 @@ executeScript "WSL.ps1";
 RefreshEnv
 executeScript "Docker.ps1";
 
-choco install -y powershell-core
-choco install -y azure-cli
+choco install --cacheLocation=$boxStarterTempDir -y powershell-core
+choco install --cacheLocation=$boxStarterTempDir -y azure-cli
 # This seems to hang for some reason, commenting out
 # Install-Module -Force Az
-choco install -y microsoftazurestorageexplorer
+choco install --cacheLocation=$boxStarterTempDir -y microsoftazurestorageexplorer
 
 # enable long filenames for git
 Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled -Value 1
