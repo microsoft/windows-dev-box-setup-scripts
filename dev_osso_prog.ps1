@@ -40,7 +40,7 @@ executeScript "CommonDevTools.ps1";
 $boxstarterTempDir = 'C:\temp'
 mkdir $boxstarterTempDir -Force
 
-choco install -y visualstudio2019professional
+choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019professional
 Update-SessionEnvironment #refreshing env due to Git install
 
 choco install --cacheLocation=$boxStarterTempDir -y visualstudio2019-workload-manageddesktop
