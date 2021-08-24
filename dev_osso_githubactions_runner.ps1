@@ -1,6 +1,6 @@
 # Description: Boxstarter Script
 # Author: mattnewport
-# Common dev settings for Osso TeamCity Agent machines
+# Common dev settings for Osso GitHub Actions Self Hosted Runner Agent machines
 
 Disable-UAC
 
@@ -43,10 +43,13 @@ choco install -y visualstudio2019-workload-manageddesktop
 choco install -y visualstudio2019-workload-azure
 choco install -y visualstudio2019-workload-netcoretools
 choco install -y visualstudio2019-workload-managedgame
+choco install -y visualstudio2019-workload-nativedesktop
 
 choco install -y dotnet-5.0-sdk
 
 choco install -y unity-hub
+
+choco install -y everything
 
 choco install -y gh
 
