@@ -33,15 +33,27 @@ choco install -y putty
 # For managing Linux and MacOS systems
 choco install -y powershell-core
 
-# Maybe
+# --- Maybe ---
 # choco install -y autohotkey
+# choco install -y docker-desktop
+# choco install -y virtualbox
+
+# All Media Related
 # choco install -y handbrake
 # choco install -y makemkv
 # choco install -y imgburn
+# choco install -y filebot
+# choco install -y bulkrenameutility
+
 # I normally just use the browser extension
 # choco install -y bitwarden
 
-# Not found
+# --- Install Manually ---
+# BackBlaze
+# Winbox
+# TP-Link Easy Config
+
+# --- Not Found ---
 # gitbash
 # magic jellybean keyfinder
 
