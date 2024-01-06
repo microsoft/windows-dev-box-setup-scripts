@@ -13,7 +13,7 @@ These scripts should cover a lot of what you need but will not likely match your
 
 |Click link to run  |Description  |
 |---------|---------|
-|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/demos/chocolateyfest2018.ps1'>ChocolateyFest 2018</a>     | DevOps tools and some examples of personalization |
+|<a href='http://boxstarter.org/package/url?https://raw.githubusercontent.com/AndyAdelman/windows-dev-box-setup-scripts/master/demos/chocolateyfest2018.ps1'>ChocolateyFest 2018</a>     | DevOps tools and some examples of personalization |
 |     | Add to this list by submitting a PR with your example configuration!        |
 
 # Contributing
