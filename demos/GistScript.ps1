@@ -46,6 +46,7 @@ $ConfirmPreference = "None" #ensure installing powershell modules don't prompt o
 Write-Host "Configuring General Settings..." -ForegroundColor "Yellow"
 
 # General: Set Computer Name
+Write-Host "Setting Computer Name..." -ForegroundColor "Yellow"
 (Get-WmiObject Win32_ComputerSystem).Rename("CHOZO") | Out-Null
 
 # General: Enable Developer Mode: Enable: 1, Disable: 0
@@ -55,9 +56,11 @@ Write-Host "Configuring General Settings..." -ForegroundColor "Yellow"
 # Enable-WindowsOptionalFeature -Online -All -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -WarningAction SilentlyContinue | Out-Null
 
 # General: Disable Sticky Keys
+Write-Host "Disabling Sticky Keys..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "506"
 
 # General: Enable NumLock After Startup
+Write-Host "Enabling NumLock After Startup..." -ForegroundColor "Yellow"
 If (!(Test-Path "HKU:")) {
 	New-PSDrive -Name HKU -PSProvider Registry -Root HKEY_USERS | Out-Null
 }
@@ -69,13 +72,14 @@ If (!([System.Windows.Forms.Control]::IsKeyLocked('NumLock'))) {
 }
 
 # General: Permanently Delete Edge Shortcut From Desktop
-#Error: Doesn't work
-#If (!(Test-Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate")) {
-	New-Item -Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate" | Out-Null
-}
-#Set-ItemProperty -Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate" -Name "CreateDesktopShortcutDefault" -Type DWord -Value 0
+# Error: Doesn't work
+# If (!(Test-Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate")) {
+# 	New-Item -Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate" | Out-Null
+# }
+# Set-ItemProperty -Path "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate" -Name "CreateDesktopShortcutDefault" -Type DWord -Value 0
 
 # General: Windows should never ask for my feedback
+Write-Host "Disabling Feedback..." -ForegroundColor "Yellow"
 if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf" -Type Folder | Out-Null}
 if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Type Folder | Out-Null}
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" "NumberOfSIUFInPeriod" 0
@@ -85,32 +89,35 @@ Write-Host "Disabling Autoplay..."
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" -Name "DisableAutoplay" -Type DWord -Value 1
 
 # General: Disable Shared Experiences
+Write-Host "Disabling Shared Experiences..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CDP" -Name "RomeSdkChannelUserAuthzPolicy" -Type DWord -Value 0
 
 # General: Show Task Manager Details
-#Error: This just hangs; there's a sleep timer but I'm impatient
-If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager")) {
-	New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Force | Out-Null
-}
-$preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
-If (!($preferences)) {
-	$taskmgr = Start-Process -WindowStyle Hidden -FilePath taskmgr.exe -PassThru
-	While (!($preferences)) {
-		Start-Sleep -m 250
-		$preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
-	}
-	Stop-Process $taskmgr
-}
-$preferences.Preferences[28] = 0
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
+# Error: This just hangs; there's a sleep timer but I'm impatient
+# If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager")) {
+# 	New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Force | Out-Null
+# }
+# $preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
+# If (!($preferences)) {
+# 	$taskmgr = Start-Process -WindowStyle Hidden -FilePath taskmgr.exe -PassThru
+# 	While (!($preferences)) {
+# 		Start-Sleep -m 250
+# 		$preferences = Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -ErrorAction SilentlyContinue
+# 	}
+# 	Stop-Process $taskmgr
+# }
+# $preferences.Preferences[28] = 0
+# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
 
 # General: Disable OneDrive
+Write-Host "Disabling OneDrive..." -ForegroundColor "Yellow"
 If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
 	New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
 }
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -Type DWord -Value 1
 
 # General: Disable Cortana
+Write-Host "Disabling Cortana..." -ForegroundColor "Yellow"
 If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings")) {
 	New-Item -Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings" -Force | Out-Null
 }
@@ -180,7 +187,7 @@ If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent")) {
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsConsumerFeatures" -Type DWord -Value 1
 
 # Privacy: Speech, Inking, & Typing: Stop "Getting to know me"
-Write-Host "Speech, Inking, & Typing..." -ForegroundColor "Yellow"
+Write-Host "Disabling Speech, Inking, & Typing..." -ForegroundColor "Yellow"
 if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization" -Type Folder | Out-Null}
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\InputPersonalization" "RestrictImplicitTextCollection" 1
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\InputPersonalization" "RestrictImplicitInkCollection" 1
@@ -233,7 +240,7 @@ Stop-Service "DiagTrack" -WarningAction SilentlyContinue
 Set-Service "DiagTrack" -StartupType Disabled
 
 # Privacy: Stop and disable WAP Push Service
-Write-Host "Stop and disable WAP Push Service..." -ForegroundColor "Yellow"
+Write-Host "Stop and Disable WAP Push Service..." -ForegroundColor "Yellow"
 Stop-Service "dmwappushservice" -WarningAction SilentlyContinue
 Set-Service "dmwappushservice" -StartupType Disabled
 
