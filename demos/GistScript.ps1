@@ -448,27 +448,27 @@ Write-Host "Show Theme Colors On Titlebar..." -ForegroundColor "Yellow"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
 
 # Taskbar: Use the Windows 7-8.1 Style Volume Mixer
-Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+Write-Host "Switching to Windows 7 Volume Mixer..." -ForegroundColor "Yellow"
 If (-Not (Test-Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC")) {
 	New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name MTCUVC | Out-Null
 }
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC" -Name EnableMtcUvc -Type DWord -Value 0
 
 # Taskbar: Disable Xbox Gamebar
-Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+Write-Host "Disabling Xbox Gamebar..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR" -Name AppCaptureEnabled -Type DWord -Value 0
 Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name GameDVR_Enabled -Type DWord -Value 0
 
 # Taskbar: Turn off People in Taskbar
-Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+Write-Host "Turning off People in Taskbar..." -ForegroundColor "Yellow"
 If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
 	New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People | Out-Null
 }
 Set-ItemProperty -Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name PeopleBand -Type DWord -Value 0
 
-#############################
-# Explorer
-#############################
+#############################################
+# File Explorer
+#############################################
 
 Write-Host "Configuring Explorer..." -ForegroundColor "Yellow"
 
@@ -478,48 +478,89 @@ if (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Cabine
 if (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Search")) {New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Search" -Type Folder | Out-Null}
 
 # Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
+Write-Host "Show hidden files by default..." -ForegroundColor "Yellow"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
 
 # Explorer: Show file extensions by default: Hide: 1, Show: 0
+Write-Host "Show file extensions by default..." -ForegroundColor "Yellow"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
 
 # Explorer: Show path in title bar: Hide: 0, Show: 1
+Write-Host "Do not show path in title bar..." -ForegroundColor "Yellow"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 0
 
 # Explorer: Disable Quick Access: Recent Files
+Write-Host "Disabling Quick Access: Recent Files..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer -Name ShowRecent -Type DWord -Value 0
 
-# Explorer: Quick Access: Frequent Folders
+# Explorer: Disable Quick Access: Frequent Folders
+Write-Host "Disabling Quick Access: Frequent Folders..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer -Name ShowFrequent -Type DWord -Value 0
 
 # Explorer: Expand explorer to the actual folder you're in
+Write-Host "Expand explorer to the actual folder you're in..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
 
 # Explorer: Adds things back in your left pane like recycle bin
+Write-Host "Adding things back into left pane like recycle bin..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneShowAllFolders -Value 1
 
 # Explorer: Set Explorer view to This PC
+Write-Host "Setting Explorer view to This PC..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1
 
 # Explorer: Hide Music icon in This PC
+Write-Host "Hiding Music icon in This PC..." -ForegroundColor "Yellow"
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}" -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}" -Recurse -ErrorAction SilentlyContinue
 
 # Explorer: Hide Videos from This PC
+Write-Host "Hiding Videos from This PC..." -ForegroundColor "Yellow"
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}" -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}" -Recurse -ErrorAction SilentlyContinue
 
 # Explorer: Hide 3D Objects from This PC
+Write-Host "Hiding 3D Objects from This PC..." -ForegroundColor "Yellow"
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" -Recurse -ErrorAction SilentlyContinue
 
 # Explorer: Disable Recycle Bin Delete Confirmation Dialog: Enable: 1, Disable: 0
+Write-Host "Enabling Recycle Bin Delete Confirmation Dialog..." -ForegroundColor "Yellow"
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 1
 
 # Explorer: Show File Operation details
+Write-Host "Show File Operation details..." -ForegroundColor "Yellow"
 If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager")) {
 	New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" | Out-Null
 }
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" -Name "EnthusiastMode" -Type DWord -Value 1
+
+#############################################
+# WiFi Settings
+#############################################
+
+Write-Host "Configuring WiFi..." -ForegroundColor "Yellow"
+
+# Wifi: Disable HotSpot Reporting
+Write-Host "Disabling HotSpot Reporting..." -ForegroundColor "Yellow"
+If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting")) {
+	New-Item -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" -Name "Value" -Type DWord -Value 0
+
+# Wifi: Disable AutoConnect
+Write-Host "Disabling AutoConnect..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" -Name "Value" -Type DWord -Value 0
+
+# Wifi: Disable AutoConnectAllowedOEM
+Write-Host "Disabling AutoConnectAllowedOEM..." -ForegroundColor "Yellow"
+If (!(Test-Path "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config")) {
+	New-Item -Path "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config" -Name "AutoConnectAllowedOEM" -Type Dword -Value 0
+
+# Wifi: Disable WifiSense
+Write-Host "Disabling WifiSense..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config" -Name "WiFISenseAllowed" -Type Dword -Value 0
 
 #############################################
 # Clean Up
