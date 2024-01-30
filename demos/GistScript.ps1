@@ -312,25 +312,48 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings -Name 
 
 Write-Host "Configuring Lock Screen..." -ForegroundColor "Yellow"
 
-## Enable Custom Background on the Login / Lock Screen
+## Lock Screen: Enable Custom Background on the Login / Lock Screen
 ## Background file: C:\someDirectory\someImage.jpg
 ## File Size Limit: 256Kb
 # Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\Personalization" "LockScreenImage" "C:\someDirectory\someImage.jpg"
 
-# Disable the Lock Screen (the one before password prompt - to prevent dropping the first character)
-#If (-Not (Test-Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization)) {
+# Lock Screen: Disable the Lock Screen (the one before password prompt - to prevent dropping the first character)
+# If (-Not (Test-Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization)) {
 #	New-Item -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows -Name Personalization | Out-Null
-#}
-#Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization -Name NoLockScreen -Type DWord -Value 1
+# }
+# Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization -Name NoLockScreen -Type DWord -Value 1
 
-# Lock screen (not sleep) on lid close
-#Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power' -Name AwayModeEnabled -Type DWord -Value 1
+# Lock Screen: Lock screen (not sleep) on lid close
+# Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power' -Name AwayModeEnabled -Type DWord -Value 1
 
-# Disable Lock screen Spotlight - New backgrounds, tips, advertisements etc.
+# Lock Screen: Disable Lock screen Spotlight - New backgrounds, tips, advertisements etc.
 Write-Host "Disabling Lock Screen Spotlight..." -ForegroundColor "Yellow"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenEnabled" -Type DWord -Value 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Type DWord -Value 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Type DWord -Value 0
+
+#############################################
+# Start Menu
+#############################################
+
+Write-Host "Configuring Start Menu..." -ForegroundColor "Yellow"
+
+# Start Menu: Disable Fast Startup
+Write-Host "Disabling Fast Startup..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name "HiberbootEnabled" -Type DWord -Value 0
+
+# Start Menu: Disable Web Search in Start Menu
+Write-Host "Disabling Web Search in Start Menu..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
+    If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
+        New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force | Out-Null
+    }
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisableWebSearch" -Type DWord -Value 1
+
+# Start Menu: Disable Cortana in Start Menu
+Write-Host "Disabling Cortana in Start Menu..." -ForegroundColor "Yellow"
+New-Item -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows' -Name 'Windows Search' -ItemType Key
+New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search' -Name AllowCortana -Type DWORD -Value 0
 
 #############################################
 # Clean Up
