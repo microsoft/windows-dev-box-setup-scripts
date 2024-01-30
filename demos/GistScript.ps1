@@ -144,7 +144,6 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search
 # Privacy Settings
 #############################################
 
-
 Write-Host "Configuring Privacy..." -ForegroundColor "Yellow"
 
 Disable-BingSearch
@@ -309,6 +308,24 @@ If (-not (Test-Path "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings")) {
 	New-Item -Path HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings -Force | Out-Null
 }
 Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings -Name UxOption -Type DWord -Value 0
+
+#############################################
+# Startup
+#############################################
+
+# Work in progress...
+# Write-Host "Configuring Startup Settings..." -ForegroundColor "Yellow"
+
+# You need to navigate to:
+# HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+
+# You'll see a list of apps that run on startup for the current user
+# Delete the DWORD for each app you want to remove from startup
+
+# Also check:
+# HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run.
+
+# You'll obviously need to repeat or something as settings are user specific
 
 #############################################
 # Lock Screen
