@@ -356,5 +356,95 @@ New-Item -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows' -Name 'Windows Search
 New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search' -Name AllowCortana -Type DWORD -Value 0
 
 #############################################
+# Taskbar
+#############################################
+
+Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+
+# Taskbar: Taskbar small, dock to bottom, always on
+Write-Host "Setting taskbar small, dock to bottom, always on..." -ForegroundColor "Yellow"
+Set-BoxstarterTaskbarOptions -Size Small -Dock Bottom -Combine Full -AlwaysShowIconsOn
+
+# Taskbar: Dock the taskbar to the left side of the screen
+Write-Output "Docking the taskbar to the left side of the screen..."
+    if (Test-Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects2') {
+        $CurrPath = 'StuckRects2'
+    }
+    elseif (Test-Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3') {
+        $CurrPath = 'StuckRects3'
+    }
+    else {
+        Write-Warning 'Unable to set the taskbar setting'
+        return
+    }
+    $BasePath = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer'
+    $RegPath = Join-Path $BasePath $CurrPath
+
+    try {
+        $CurrSettings = (Get-ItemProperty $RegPath).Settings
+        $CurrSettings[12] = 3
+        Set-ItemProperty -Path $BasePath -Name $CurrPath -Value $CurrSettings -Type Binary
+    }
+    catch {
+        Write-Warning "Unable to pull the current registry settings!"
+    }
+
+# Taskbar: Show taskbar on multiple displays: Show: 1, Hide: 0
+Write-Host "Setting Taskbar Is On Main Display Only..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarEnabled -Value 0
+
+# Taskbar: Taskbar settings when taskbar is on all displays
+# Options:
+# Show taskbar buttons on all taskbars: 0
+# Show taskbar buttons on main taskbar and taskbar where window is open: 1
+# Show taskbar buttons on taskbar where window is open: 2
+# Write-Host "Setting Multi-Monitor Taskbar Mode..." -ForegroundColor "Yellow"
+# Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
+
+## AndyA: I use widgets and search
+# Taskbar: Hide the Search, Task, Widget, and Chat buttons: Show: 1, Hide: 0
+Write-Host "Hiding Chat Button..." -ForegroundColor "Yellow"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" 1  # Search
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" 1 # Task
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarDa" 1 # Widgets
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarMn" 0 # Chat
+
+# Taskbar: Hide cortana: Hide: 0, Show: 1
+Write-Host "Hiding Cortana..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowCortanaButton -Value 0
+
+# Duplicate - See Above
+# Taskbar: Show TaskView: Hide: 0, Show: 1
+# Write-Host "Don't Hide Taskview..." -ForegroundColor "Yellow"
+# Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowTaskViewButton -Value 1
+
+# Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
+Write-Host "Show Colors On Taskbar, Start, & SysTray..." -ForegroundColor "Yellow"
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
+
+# Titlebar: Disable theme colors on titlebar: Enable: 1, Disable: 0
+Write-Host "Show Theme Colors On Titlebar..." -ForegroundColor "Yellow"
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
+
+# Taskbar: Use the Windows 7-8.1 Style Volume Mixer
+Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+If (-Not (Test-Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC")) {
+	New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name MTCUVC | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\MTCUVC" -Name EnableMtcUvc -Type DWord -Value 0
+
+# Taskbar: Disable Xbox Gamebar
+Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR" -Name AppCaptureEnabled -Type DWord -Value 0
+Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name GameDVR_Enabled -Type DWord -Value 0
+
+# Taskbar: Turn off People in Taskbar
+Write-Host "Configuring Taskbar..." -ForegroundColor "Yellow"
+If (-Not (Test-Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
+	New-Item -Path HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People | Out-Null
+}
+Set-ItemProperty -Path "HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name PeopleBand -Type DWord -Value 0
+
+#############################################
 # Clean Up
 #############################################
