@@ -34,7 +34,6 @@ $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a r
 #--- Basic setup ---
 Update-ExecutionPolicy -Policy RemoteSigned
 Disable-UAC
-Enable-RemoteDesktop
 choco feature enable -n=allowGlobalConfirmation
 $ConfirmPreference = "None" #ensure installing powershell modules don't prompt on needed dependencies
 
@@ -939,6 +938,19 @@ Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRest
 # See also:
 # https://learn.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update
 
+RefreshEnv
+
 #############################################
 # Clean Up
 #############################################
+
+## set desktop wallpaper
+#Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
+#Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\github\chocofest.jpg'
+#rundll32.exe user32.dll, UpdatePerUserSystemParameters
+#RefreshEnv
+
+Write-Host "Cleaning Up..." -ForegroundColor "Yellow"
+Enable-UAC
+Enable-MicrosoftUpdate
+Install-WindowsUpdate -acceptEula
