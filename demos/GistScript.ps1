@@ -909,12 +909,14 @@ Get-AppxPackage "Microsoft.ZuneVideo" -AllUsers | Remove-AppxPackage -AllUsers
 Get-AppXProvisionedPackage -Online | Where DisplayName -like "Microsoft.ZuneVideo" | Remove-AppxProvisionedPackage -Online -AllUsers
 
 # Uninstall Power Automate
-Get-AppxPackage "Microsoft.PowerAutomateDesktop" -AllUsers | Remove-AppxPackage -AllUsers
-Get-AppXProvisionedPackage -Online | Where DisplayName -like "Microsoft.PowerAutomateDesktop" | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxPackage "Microsoft.PowerAutomateDesktop" -AllUsers | Remove-AppxPackage -AllUsers
+#Get-AppXProvisionedPackage -Online | Where DisplayName -like "Microsoft.PowerAutomateDesktop" | Remove-AppxProvisionedPackage -Online -AllUsers
+
+########### Sketch and Power Automate might be a better way to create user profiles/personalization
 
 # Uninstall Screen Sketch
-Get-AppxPackage "Microsoft.ScreenSketch" -AllUsers | Remove-AppxPackage -AllUsers
-Get-AppXProvisionedPackage -Online | Where DisplayName -like "Microsoft.ScreenSketch" | Remove-AppxProvisionedPackage -Online -AllUsers
+#Get-AppxPackage "Microsoft.ScreenSketch" -AllUsers | Remove-AppxPackage -AllUsers
+#Get-AppXProvisionedPackage -Online | Where DisplayName -like "Microsoft.ScreenSketch" | Remove-AppxProvisionedPackage -Online -AllUsers
 
 # Uninstall Microsoft People
 Get-AppxPackage "Microsoft.People" -AllUsers | Remove-AppxPackage -AllUsers
